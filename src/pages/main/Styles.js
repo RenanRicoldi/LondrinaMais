@@ -1,6 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native'
-import styled from 'styled-components/native';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import styled from 'styled-components/native'
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+import { hours, days } from '../../utils/Time'
 
 export const styles = StyleSheet.create({
     MainScreen:{

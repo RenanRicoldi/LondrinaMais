@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 import { hours, days } from '../../utils/Time'
 
-export const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
     MainScreen:{
         backgroundColor: '#97DB4F',
         alignItems: 'center',
@@ -24,5 +24,16 @@ export const styles = StyleSheet.create({
         elevation: 5,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    logoBackground: {
+        width: Dimensions.get('window').width,
+        backgroundColor: 'white',
+        alignItems: 'center'
+    },
+    logo: {
+        marginTop: 15,
+        marginBottom: 15
     }
 })
+
+export default Styles

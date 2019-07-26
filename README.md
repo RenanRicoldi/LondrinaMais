@@ -1,2 +1,2 @@
-# Londrina-Mais
+# LondrinaMais
 Aplicativo do Londrina Mais

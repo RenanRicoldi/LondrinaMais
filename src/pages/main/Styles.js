@@ -12,18 +12,21 @@ const Styles = StyleSheet.create({
     },
     Timer:{
         backgroundColor: '#698F3F',
-        width: Dimensions.get('window').width/1.5,
-        height: Dimensions.get('window').width/1.5,
-        borderRadius: Dimensions.get('window').width/1.5,
         marginTop: Dimensions.get('window').height/5,
         marginBottom: Dimensions.get('window').height/6,
         shadowColor: '#202030',
-        shadowOffset: { width: 2, height: 2 },
+        shadowOffset:{
+            width: 2,
+            height: 2
+        },
         shadowRadius: 10,
         shadowOpacity: 1,
         elevation: 5,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        width: Dimensions.get('window').width/1.5,
+        height: Dimensions.get('window').width/1.5,
+        borderRadius:  Dimensions.get('window').width/1.5
     },
     logoBackground: {
         width: Dimensions.get('window').width,

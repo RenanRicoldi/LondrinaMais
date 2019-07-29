@@ -6,7 +6,7 @@ import Styles from './Styles'
 function Logo() {
     return(
         <View style={Styles.logoBackground}>
-            <Image source={require('../../../assets/images/Logo.png')} style={Styles.logo}/>
+            <Image source={require('../../../assets/images/logoEvento/Logo')} style={Styles.logo}/>
         </View>
     )
 }

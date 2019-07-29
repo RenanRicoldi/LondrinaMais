@@ -8,6 +8,7 @@ MERGED from C:\Users\renan\react-native\Jobs\LondrinaMais\android\app\src\main\A
 MERGED from [:react-native-vector-icons] C:\Users\renan\react-native\Jobs\LondrinaMais\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.60.4] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\f470b0a21bae69ae4bf28660e34c4393\AndroidManifest.xml:2:1-13:12
 MERGED from [org.webkit:android-jsc:r245459] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\73ca04528cd85068be8a2571969a78da\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-gesture-handler] C:\Users\renan\react-native\Jobs\LondrinaMais\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\aec8f3bafa991d466e0e04d3f1691e92\AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\75462e2c2c7860b93f5eae552ff7468b\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\7fbe375f4d94a2e6e3b54187a3f2e62a\AndroidManifest.xml:2:1-9:12
@@ -139,6 +140,8 @@ MERGED from [com.facebook.react:react-native:0.60.4] C:\Users\renan\.gradle\cach
 MERGED from [com.facebook.react:react-native:0.60.4] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\f470b0a21bae69ae4bf28660e34c4393\AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\73ca04528cd85068be8a2571969a78da\AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\73ca04528cd85068be8a2571969a78da\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] C:\Users\renan\react-native\Jobs\LondrinaMais\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] C:\Users\renan\react-native\Jobs\LondrinaMais\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\aec8f3bafa991d466e0e04d3f1691e92\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\aec8f3bafa991d466e0e04d3f1691e92\AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\renan\.gradle\caches\transforms-2\files-2.1\75462e2c2c7860b93f5eae552ff7468b\AndroidManifest.xml:5:5-7:41

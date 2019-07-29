@@ -8,7 +8,8 @@ const Styles = StyleSheet.create({
     },
     logo: {
         marginTop: 15,
-        marginBottom: 15
+        marginBottom: 15,
+        
     }
 })
 

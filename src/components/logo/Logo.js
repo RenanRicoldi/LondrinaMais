@@ -1,13 +1,17 @@
 import React from 'react'
-import { View, Image } from 'react-native'
+import { View, Image, Animated, Dimensions } from 'react-native'
 
 import Styles from './Styles'
 
-function Logo() {
+function Logo({ transY }) {
     return(
-        <View style={Styles.logoBackground}>
-            <Image source={require('../../../assets/images/logoEvento/Logo')} style={Styles.logo}/>
-        </View>
+        <Animated.View style={[Styles.logoBackground, {opacity: transY.interpolate({
+            inputRange: [ -Dimensions.get('window').height + (Dimensions.get('window').height/1.2 ), 0],
+            outputRange: [ 0, 1 ],
+            extrapolate: 'clamp',
+        })}]}>
+            <Image source={require('../../../assets/images/logoEvento/Logo.png')} style={Styles.logo}/>
+        </Animated.View>
     )
 }
 

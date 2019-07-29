@@ -16,7 +16,7 @@ const Styles = StyleSheet.create({
         shadowOpacity: 1,
         elevation: 5,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     }
 })
 

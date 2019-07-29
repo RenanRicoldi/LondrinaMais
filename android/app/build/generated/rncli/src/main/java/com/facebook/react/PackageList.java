@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import com.londrinamais.BuildConfig;
 import com.londrinamais.R;
 
+// react-native-gesture-handler
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-vector-icons
 import com.oblador.vectoricons.VectorIconsPackage;
 
@@ -48,6 +50,7 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(),
+      new RNGestureHandlerPackage(),
       new VectorIconsPackage()
     ));
   }

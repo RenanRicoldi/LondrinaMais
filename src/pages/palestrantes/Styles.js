@@ -1,23 +1,25 @@
 import { StyleSheet, Dimensions } from 'react-native'
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 10
+        padding: 10,
+        backgroundColor: '#B4EE48'
     },
+
     wrapper: {
         flex: 1,
     },
+
     palestrante: {
         flexDirection: 'row',
         marginBottom: 10,
-        borderWidth: 1,
+        backgroundColor: 'white',
         borderBottomRightRadius: 30,
         borderTopRightRadius: 4,
         borderTopLeftRadius: 8,
         borderBottomLeftRadius: 8,
-        borderColor: 'green',
-        padding: 4
+        padding: 5
     },
     palNome:{
         fontWeight: '600',

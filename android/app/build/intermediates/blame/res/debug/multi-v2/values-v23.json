@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/fernandomorgadopiresneto/Documents/UEL/Londrina Mais/LondrinaMais/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "C:\\Users\\renan\\react-native\\Jobs\\LondrinaMais\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/fernandomorgadopiresneto/.gradle/caches/transforms-2/files-2.1/7a334275c5f0e31457bec8ba8936e668/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\renan\\.gradle\\caches\\transforms-2\\files-2.1\\aec8f3bafa991d466e0e04d3f1691e92\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

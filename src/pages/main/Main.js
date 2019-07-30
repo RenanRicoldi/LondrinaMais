@@ -31,11 +31,11 @@ const Main = () => {
             }
 
             Animated.timing(transY, {
-                toValue: opened ? -Dimensions.get('window').height + (Dimensions.get('window').height/10) : 0,
+                toValue: opened ? -Dimensions.get('window').height + (Dimensions.get('window').height/20) : 0,
                 duration: 200,
                 useNativeDriver: true,
             }).start(() => {
-                offSet = opened ? -Dimensions.get('window').height + (Dimensions.get('window').height/10) : 0
+                offSet = opened ? -Dimensions.get('window').height + (Dimensions.get('window').height/20) : 0
                 transY.setOffset(offSet)
                 transY.setValue(0)
             })
@@ -47,15 +47,15 @@ const Main = () => {
         <>
             <StatusBar barStyle='dark-content' backgroundColor='#97DB4F'/>
             <View style={Styles.MainScreen}>
-                <Logo transY={transY}/>
-                <Timer transY={transY}/>
+                <Logo transY={ transY }/>
+                <Timer transY={ transY }/>
                 <PanGestureHandler onGestureEvent={animatedEvent} onHandlerStateChange={onHandlerStateChanged} >
                     <Animated.View  
                         style={[{
                             transform: [{
                                 translateY: transY.interpolate({
                                     inputRange: [ -Dimensions.get('window').height, 0],
-                                    outputRange: [ -Dimensions.get('window').height + (Dimensions.get('window').height/10), 0],
+                                    outputRange: [ -Dimensions.get('window').height + (Dimensions.get('window').height/20), 0],
                                     extrapolate: 'clamp',
                                 }),
                             }],
@@ -76,6 +76,7 @@ const Main = () => {
                         }}/>
                     </Animated.View>
                 </PanGestureHandler>
+                <Menu transY={ transY }/>
             </View>
         </>
     )

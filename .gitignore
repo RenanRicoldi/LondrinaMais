@@ -1,6 +1,4 @@
 node_modules
-Android/.gradle
-Android/app
 
 # Xcode
 !**/*.xcodeproj

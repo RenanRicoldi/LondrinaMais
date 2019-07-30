@@ -5,9 +5,7 @@ import Styles from './Styles'
 
 class Palestrantes extends Component {
 
-    static navigationOptions = {
-        title: 'Palestrantes'
-    }
+    
 
     constructor() {
         super();
@@ -30,7 +28,7 @@ class Palestrantes extends Component {
 
     drawContent(person) {
         return (
-            <TouchableNativeFeedback key={person.nome} onPress={() => { this.props.navigation.navigate("Details", person ) }}>
+            <TouchableNativeFeedback key={person.nome} onPress={() => { this.props.navigation.navigate("DetalhesPalestrantes", person ) }}>
                 <View style={Styles.palestrante}>
                     <Image style={Styles.image} source={{uri: person.picture }} />
                     <View>

@@ -8,6 +8,7 @@ import Timer from '../../components/timer/Timer'
 import Logo from '../../components/logo/Logo'
 import Menu from '../../components/menu/Menu'
 import Newsfeed from '../newsfeed/Newsfeed'
+import News from '../../components/newsContent/News'
 import Palestrantes from '../palestrantes/Palestrantes'
 import PalDetails from '../../components/palestrantesDetails/Detalhes'
 
@@ -93,25 +94,31 @@ const MainNavigator = createStackNavigator({
         screen: Main,
         navigationOptions: () => ({
             header: null
-          })
+        })
     },
     Palestrantes: {
         screen: Palestrantes,
         navigationOptions: () => ({
             header: null
-          })
+        })
     },
     DetalhesPalestrantes: {
         screen: PalDetails,
         navigationOptions: () => ({
             header: null
-          })
+        })
     },
     NewsFeed: {
         screen: Newsfeed,
         navigationOptions: () => ({
             header: null
-          })
+        })
+    },
+    NewsContent: {
+        screen: News,
+        navigationOptions: () => ({
+            header: null
+        })
     }
   },
   {

@@ -1,51 +1,87 @@
 import React, {Component} from 'react'
 import {View,
+        ScrollView,
+        StyleSheet,
         Text,
         Image,
-        ScrollView} from 'react-native'
+        TouchableNativeFeedback} from 'react-native'
+import axios from 'axios'
 import Styles from './Styles'
 
 class Newsfeed extends Component {
 
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
 
+        this.state = {
+            news: []
+        }
     }
 
-    drawNews(info){
+    componentDidMount() {
+        axios
+        .get('http://www.json-generator.com/api/json/get/bOEeSKLnci?indent=0')
+        .then(response => {
+            const { newsFeed } = response.data
+            this.setState({
+                news: newsFeed
+            })
+        })
+    }
+
+    drawCard(noticia){
         return(
-            <View style={Styles.newsView}>
-                <Image style={Styles.newsImage} source={ {uri: info.imgURL } }></Image>
-                <ScrollView style={Styles.newsContent}>
-                    <Text style={Styles.newsTitle}>{info.titulo}</Text>
-                    <Text style={Styles.newsText}>{info.texto}</Text>
-                </ScrollView>
-            </View>              
+            <TouchableNativeFeedback key={ noticia.id } onPress={() => { this.props.navigation.navigate("NewsContent", {image : true, titulo: noticia.titulo, texto: noticia.conteudo, imgURL: noticia.picture} ) }}>
+            <View style={Styles.newsCard}>
+                    <Image style={Styles.newsCardImage} source={{uri: noticia.picture }}></Image>
+                    <View style={Styles.newsCardContent}> 
+                        <Text style={Styles.newsCardTitle}>{noticia.titulo}</Text>
+                    </View> 
+            </View>
+            </TouchableNativeFeedback>
         );
     }
 
-    drawNewsNoPicture(info){
+    drawCardNoPicture(noticia){
         return(
-            <ScrollView style={Styles.newsContent}>
-                <Text style={Styles.newsTitle}>{info.titulo}</Text>
-                <Text style={Styles.newsText}>{info.texto}</Text>
-            </ScrollView>               
-        )
+            <TouchableNativeFeedback key={ noticia.id } onPress={() => { this.props.navigation.navigate("NewsContent", {image : false, titulo: noticia.titulo, texto: noticia.conteudo, imgURL: noticia.picture} ) }}>
+            <View style={Styles.newsCardNoPicture}>
+                    <View style={Styles.newsCardContent}> 
+                        <Text style={Styles.newsCardTitle}>
+                            {noticia.titulo.length <= 100?
+                            noticia.titulo:
+                            `${noticia.conteudo.substring(0,65)}...`}
+                        </Text>
+                        <Text style={Styles.newsCardDesc} numberOfLines={2}>
+                            {noticia.conteudo.length < 100?
+                            noticia.conteudo:
+                            `${noticia.conteudo.substring(0,100)}...`}
+                        </Text>
+                    </View> 
+            </View>
+            </TouchableNativeFeedback>
+        );
     }
 
-    render(){
-
-        const info = this.props.navigation.state.params;
+    render() {
 
         return(
             <View style={Styles.container}>
-                {(info.image)?
-                this.drawNews(info):
-                this.drawNewsNoPicture(info)}
+
+                <ScrollView>
+                { this.state.news.map((noticia) => {
+                        return (noticia.imagem)?
+                            this.drawCard(noticia):
+                            this.drawCardNoPicture(noticia)
+                    })}
+                </ScrollView>
+                
             </View>
         );
+
     }
+
 
 }
 
-export default Newsfeed
+export default Newsfeed;

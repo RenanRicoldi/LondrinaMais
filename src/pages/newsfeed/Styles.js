@@ -4,27 +4,37 @@ const Styles = StyleSheet.create({
 
     container: {
         flex: 1,
+        paddingLeft: 14,
+        paddingRight: 14,
+        backgroundColor: '#B4EE48',
     },
 
-    newsImage:{
-        height: 240
+    newsCard: {
+        backgroundColor: 'white',
+        borderRadius: 4,
+        marginBottom: 5,
+        marginTop: 10
     },
-    newsView:{
-        flex: 1
+    newsCardNoPicture: {
+        backgroundColor: 'white',
+        borderRadius: 4,
+        marginBottom: 5,
+        marginTop: 10
     },
-    newsContent:{
-        paddingLeft: 8,
-        paddingRight: 8
+    newsCardImage: {
+        height: 150,
+        borderTopLeftRadius: 4,
+        borderTopRightRadius: 4
     },
-    newsTitle: {
-        fontSize: 22,
-        fontWeight: 'bold',
-        marginTop: 5,
-        marginBottom: 5
+    newsCardContent: {
+        padding: 5,
     },
-    newsText: {
-        fontSize: 16,
-        marginBottom: 5
+    newsCardTitle: {
+        fontSize: 18,
+        fontWeight: 'bold'
+    },
+    newsCardDesc: {
+        fontSize: 14
     }
 
 })

@@ -14,7 +14,7 @@ import PalDetails from '../../components/palestrantesDetails/Detalhes'
 
 class Main extends Component {
     render(){
-        let offSet = 0;
+        let offSet = 0
 
         const transY = new Animated.Value(0)
 
@@ -53,36 +53,38 @@ class Main extends Component {
             <>
                 <StatusBar barStyle='dark-content' backgroundColor='#97DB4F'/>
                 <View style={Styles.MainScreen}>
-                    <Logo transY={ transY }/>
-                    <Timer transY={ transY }/>
-                    <PanGestureHandler onGestureEvent={animatedEvent} onHandlerStateChange={onHandlerStateChanged} >
-                        <Animated.View  
-                            style={[{
-                                transform: [{
-                                    translateY: transY.interpolate({
-                                        inputRange: [ -Dimensions.get('window').height, 0],
-                                        outputRange: [ -Dimensions.get('window').height + (Dimensions.get('window').height/20), 0],
-                                        extrapolate: 'clamp',
-                                    }),
-                                }],
-                            },{
-                                width: 90,
-                                height:50,
-                                alignItems: 'center',
-                                zIndex: 5
-                            }]}
-                        >
-                            <Animated.Image source = {require('../../../assets/icons/expand/Icon.png')} style={{
-                                transform: [{rotate: transY.interpolate({
-                                    inputRange: [ -Dimensions.get('window').height + (Dimensions.get('window').height/5), 0],
-                                    outputRange: ['180 deg', '0 deg'],
-                                    extrapolate: 'clamp'})},
-                                {perspective: 1000},
-                                ],
-                            }}/>
-                        </Animated.View>
-                    </PanGestureHandler>
-                    <Menu transY={ transY } navigation={ this.props.navigation }/>
+                    <Logo transY={ transY } />
+                    <Timer transY={ transY } />
+                    <View style={{flex: 1, marginTop: Dimensions.get('window').height - 10 , position: 'absolute', alignItems: 'center', backgroundColor: '#97DB4F'}}>
+                        <PanGestureHandler onGestureEvent={animatedEvent} onHandlerStateChange={onHandlerStateChanged} >
+                            <Animated.View  
+                                style={[{
+                                    transform: [{
+                                        translateY: transY.interpolate({
+                                            inputRange: [ -Dimensions.get('window').height, 0],
+                                            outputRange: [ -Dimensions.get('window').height + (Dimensions.get('window').height/20), 0],
+                                            extrapolate: 'clamp',
+                                        }),
+                                    }],
+                                },{
+                                    width: 90,
+                                    height: 50,
+                                    alignItems: 'center',
+                                    zIndex: 5
+                                }]}
+                            >
+                                <Animated.Image source = {require('../../../assets/icons/expand/Icon.png')} style={{
+                                    transform: [{rotate: transY.interpolate({
+                                        inputRange: [ -Dimensions.get('window').height + (Dimensions.get('window').height/5), 0],
+                                        outputRange: ['180 deg', '0 deg'],
+                                        extrapolate: 'clamp'})},
+                                    {perspective: 1000},
+                                    ],
+                                }}/>
+                            </Animated.View>
+                        </PanGestureHandler>
+                        <Menu transY={ transY } navigation={ this.props.navigation }/>    
+                    </View>            
                 </View>
             </>
         )

@@ -7,9 +7,8 @@ const Styles = StyleSheet.create({
         alignItems: 'center'
     },
     logo: {
-        marginTop: 15,
-        marginBottom: 15,
-        
+        marginTop: Dimensions.get('window').height/40,
+        marginBottom: Dimensions.get('window').height/40,
     }
 })
 

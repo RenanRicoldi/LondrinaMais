@@ -9,12 +9,11 @@ const Styles = StyleSheet.create({
         height: Dimensions.get('window').width/1.5,
         borderRadius: Dimensions.get('window').width/1.5,
         marginTop: Dimensions.get('window').height/5,
-        marginBottom: Dimensions.get('window').height/6,
+        marginBottom: Dimensions.get('window').height,
         shadowColor: '#202030',
         shadowOffset: { width: 2, height: 2 },
         shadowRadius: 10,
         shadowOpacity: 1,
-        elevation: 5,
         justifyContent: 'center',
         alignItems: 'center',
     }

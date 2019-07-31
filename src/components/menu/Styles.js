@@ -4,7 +4,7 @@ import { StyleSheet, Dimensions } from 'react-native'
 const Styles = StyleSheet.create({
     Menu:{
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
     },
     Feed:{
         backgroundColor: '#fff',

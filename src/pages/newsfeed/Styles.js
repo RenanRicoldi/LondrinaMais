@@ -6,7 +6,7 @@ const Styles = StyleSheet.create({
         flex: 1,
         paddingLeft: 14,
         paddingRight: 14,
-        backgroundColor: '#B4EE48',
+        backgroundColor: '#97DB4F',
     },
 
     newsCard: {

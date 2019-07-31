@@ -20,16 +20,18 @@ class Menu extends Component{
                     <Image source={require('../../../assets/icons/feed/feed.png')}/>
                     <Text style={ Styles.TextoFeed }>Feed de Notícias</Text>
                 </TouchableWithoutFeedback>
+
                 <View style={ Styles.ItemsContainer }>
                     <TouchableWithoutFeedback style={ Styles.Items } onPress={() => this.props.navigation.navigate('Palestrantes')}>
                         <Image source={require('../../../assets/icons/palestrantes/palestrantes.png')}/>
                         <Text style={ Styles.TextItems }>Palestrantes</Text>
                     </TouchableWithoutFeedback>
-                    <View style={ [Styles.Items, {marginLeft: 20}] }>
+                    <TouchableWithoutFeedback style={ [Styles.Items, {marginLeft: 20}] } onPress={() => this.props.navigation.navigate('Cronograma')}>
                         <Image source={require('../../../assets/icons/cronograma/cronograma.png')}/>
                         <Text style={ Styles.TextItems }>Cronograma</Text>
-                    </View>
+                    </TouchableWithoutFeedback>
                 </View>
+
                 <View style={ Styles.ItemsContainer }>
                     <View style={ Styles.Items }>
                         <Image source={require('../../../assets/icons/expositores/expositores.png')}/>

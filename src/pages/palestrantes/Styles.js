@@ -4,7 +4,7 @@ const Styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-        backgroundColor: '#B4EE48'
+        backgroundColor: '#97DB4F'
     },
 
     wrapper: {

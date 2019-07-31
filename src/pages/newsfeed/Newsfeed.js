@@ -31,7 +31,7 @@ class Newsfeed extends Component {
 
     drawCard(noticia){
         return(
-            <TouchableNativeFeedback key={ noticia.id } onPress={() => { this.props.navigation.navigate("NewsContent", {image : true, titulo: noticia.titulo, texto: noticia.conteudo, imgURL: noticia.picture} ) }}>
+            <TouchableNativeFeedback key={ noticia.id } onPress={() => { this.props.navigation.navigate("NewsFeedContent", {image : true, titulo: noticia.titulo, texto: noticia.conteudo, imgURL: noticia.picture} ) }}>
             <View style={Styles.newsCard}>
                     <Image style={Styles.newsCardImage} source={{uri: noticia.picture }}></Image>
                     <View style={Styles.newsCardContent}> 
@@ -44,7 +44,7 @@ class Newsfeed extends Component {
 
     drawCardNoPicture(noticia){
         return(
-            <TouchableNativeFeedback key={ noticia.id } onPress={() => { this.props.navigation.navigate("NewsContent", {image : false, titulo: noticia.titulo, texto: noticia.conteudo, imgURL: noticia.picture} ) }}>
+            <TouchableNativeFeedback key={ noticia.id } onPress={() => { this.props.navigation.navigate("NewsFeedContent", {image : false, titulo: noticia.titulo, texto: noticia.conteudo, imgURL: noticia.picture} ) }}>
             <View style={Styles.newsCardNoPicture}>
                     <View style={Styles.newsCardContent}> 
                         <Text style={Styles.newsCardTitle}>

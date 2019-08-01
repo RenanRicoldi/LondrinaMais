@@ -14,6 +14,16 @@ import PalDetails from '../../components/palestrantesDetails/Detalhes'
 import Cronograma from '../cronograma/Cronograma'
 
 class Main extends Component {
+
+    measureMenuMargin(){
+
+        if(StatusBar.currentHeight > 24)
+            return Dimensions.get("window").height - StatusBar.currentHeight
+        else
+            return Dimensions.get("window").height - (StatusBar.currentHeight*2)
+    
+    }
+
     render(){
         let offSet = 0
 
@@ -56,7 +66,7 @@ class Main extends Component {
                 <View style={Styles.MainScreen}>
                     <Logo transY={ transY } />
                     <Timer transY={ transY } />
-                    <View style={{flex: 1, marginTop: Dimensions.get('window').height - 10 , position: 'absolute', alignItems: 'center', backgroundColor: '#97DB4F'}}>
+                    <View style={{flex: 1, marginTop: this.measureMenuMargin(), position: 'absolute', alignItems: 'center', backgroundColor: '#97DB4F'}}>
                         <PanGestureHandler onGestureEvent={animatedEvent} onHandlerStateChange={onHandlerStateChanged} >
                             <Animated.View  
                                 style={[{

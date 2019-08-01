@@ -5,8 +5,6 @@ import Styles from './Styles'
 
 class Palestrantes extends Component {
 
-    
-
     constructor() {
         super();
 

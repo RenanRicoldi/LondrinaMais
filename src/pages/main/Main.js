@@ -26,8 +26,7 @@ class Main extends Component {
     render(){
         let offSet = 0
 
-        let { width, height } = D
-        height = height/3
+        let height = Dimensions.get('window').height
 
         const transY = new Animated.Value(0)
 

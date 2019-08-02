@@ -8,7 +8,8 @@ const Styles = StyleSheet.create({
     MainScreen:{
         backgroundColor: '#97DB4F',
         alignItems: 'center',
-        paddingTop: getStatusBarHeight(),
+        height: Dimensions.get('screen').height,
+        width: Dimensions.get('screen').width
     }
 })
 

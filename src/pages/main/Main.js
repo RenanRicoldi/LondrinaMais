@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, Image, StatusBar, Dimensions, Animated } from 'react-native'
-import { PanGestureHandler, State } from 'react-native-gesture-handler'
+import { View, Text, Image, StatusBar, Dimensions, Animated } from 'react-native'   
+import { PanGestureHandler, State, TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import {createStackNavigator, createAppContainer} from 'react-navigation'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import Styles, { Icone } from './Styles'
 import Timer from '../../components/timer/Timer'
 import Logo from '../../components/logo/Logo'
@@ -17,6 +16,9 @@ class Main extends Component {
     render(){
         let offSet = 0
 
+        let { width, height } = D
+        height = height/3
+
         const transY = new Animated.Value(0)
 
         const animatedEvent = Animated.event(
@@ -29,7 +31,7 @@ class Main extends Component {
 
                 offSet += translationY
 
-                if (translationY < -1 && translationY >= -Dimensions.get('window').height + (Dimensions.get('window').height/9)){
+                if (translationY < -1 && translationY >= -height + (height/9)){
                     opened = true
                 } else {
                     transY.setValue(offSet)
@@ -38,11 +40,11 @@ class Main extends Component {
                 }
 
                 Animated.timing(transY, {
-                    toValue: opened ? -Dimensions.get('window').height + (Dimensions.get('window').height/20) : 0,
+                    toValue: opened ? -height + (height/20) : 0,
                     duration: 200,
                     useNativeDriver: true,
                 }).start(() => {
-                    offSet = opened ? -Dimensions.get('window').height + (Dimensions.get('window').height/20) : 0
+                    offSet = opened ? -height + (height/20) : 0
                     transY.setOffset(offSet)
                     transY.setValue(0)
                 })
@@ -54,16 +56,16 @@ class Main extends Component {
             <>
                 <StatusBar barStyle='dark-content' backgroundColor='#97DB4F'/>
                 <View style={Styles.MainScreen}>
-                    <Logo transY={ transY } />
-                    <Timer transY={ transY } />
-                    <View style={{flex: 1, marginTop: Dimensions.get('window').height - 10 , position: 'absolute', alignItems: 'center', backgroundColor: '#97DB4F'}}>
+                    <Logo transY={transY}/>
+                    <Timer transY={transY}/>
+                    <View style={{flex: 1, marginTop: Dimensions.get('screen').height - Dimensions.get('screen').height/8 , position: 'absolute', alignItems: 'center', backgroundColor: '#97DB4F'}}>
                         <PanGestureHandler onGestureEvent={animatedEvent} onHandlerStateChange={onHandlerStateChanged} >
                             <Animated.View  
                                 style={[{
                                     transform: [{
                                         translateY: transY.interpolate({
-                                            inputRange: [ -Dimensions.get('window').height, 0],
-                                            outputRange: [ -Dimensions.get('window').height + (Dimensions.get('window').height/20), 0],
+                                            inputRange: [ -height, 0],
+                                            outputRange: [ -height + (height/20), 0],
                                             extrapolate: 'clamp',
                                         }),
                                     }],
@@ -76,7 +78,7 @@ class Main extends Component {
                             >
                                 <Animated.Image source = {require('../../../assets/icons/expand/Icon.png')} style={{
                                     transform: [{rotate: transY.interpolate({
-                                        inputRange: [ -Dimensions.get('window').height + (Dimensions.get('window').height/5), 0],
+                                        inputRange: [ -height + (height/5), 0],
                                         outputRange: ['180 deg', '0 deg'],
                                         extrapolate: 'clamp'})},
                                     {perspective: 1000},

@@ -16,7 +16,7 @@ class Main extends Component {
 
     measureMenuMargin(){
 
-        if(StatusBar.currentHeight > 24)
+        if(StatusBar.currentHeight > 30)
             return Dimensions.get("window").height - StatusBar.currentHeight
         else
             return Dimensions.get("window").height - (StatusBar.currentHeight*2)

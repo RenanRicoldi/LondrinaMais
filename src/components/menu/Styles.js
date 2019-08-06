@@ -40,7 +40,7 @@ const Styles = StyleSheet.create({
     },
     TextItems:{
         color:'#000',
-        paddingTop: 5
+        paddingTop: 5,
     },
     Logos:{
         flexDirection: 'row',

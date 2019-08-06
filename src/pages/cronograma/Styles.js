@@ -1,4 +1,5 @@
-import {StyleSheet} from 'react-native'
+import {StyleSheet,
+        Dimensions} from 'react-native'
 
 const Styles = StyleSheet.create({
 
@@ -9,8 +10,8 @@ const Styles = StyleSheet.create({
     },
 
     btnSwitcher: {
-        height: 100,
-        width: 100,
+        height: Dimensions.get("window").width / 4,
+        width: Dimensions.get("window").width / 4,
         backgroundColor: 'white',
         borderRadius: 8,
         justifyContent: 'center',

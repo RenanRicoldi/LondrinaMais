@@ -33,16 +33,16 @@ class Menu extends Component{
                 </View>
 
                 <View style={ Styles.ItemsContainer }>
-                    <View style={ Styles.Items }>
+                    <TouchableWithoutFeedback style={ Styles.Items } onPress={() => this.props.navigation.navigate('Expositores', {type: 'https://next.json-generator.com/api/json/get/E15K-S4XD?ident=0'})}>
                         <Image source={require('../../../assets/icons/expositores/expositores.png')} style={{width: Dimensions.get('window').width/6, height:  Dimensions.get('window').width/8}} resize='contain'/>
                         <Text style={{ color: '#000', fontSize: Dimensions.get('window').height/60 }}>Expositores</Text>
                         <Text style = {{ fontSize: Dimensions.get('window').height/65 }}>Unidades Escolares</Text>
-                    </View>
-                    <View style={ [Styles.Items, {marginLeft: 20}] }>
+                    </TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback style={[ Styles.Items, {marginLeft: 20} ]} onPress={() => this.props.navigation.navigate('Expositores', {type: 'https://next.json-generator.com/api/json/get/4ks3PmNXP?ident=0'})}>
                         <Image source={require('../../../assets/icons/expositores/expositores.png')} style={{width: Dimensions.get('window').width/6, height:  Dimensions.get('window').width/8}} resize='contain'/>
                         <Text style={{ color: '#000', fontSize: Dimensions.get('window').height/60 }}>Expositores</Text>
                         <Text style = {{ fontSize: Dimensions.get('window').height/65 }}>Parceiros</Text>
-                    </View>
+                    </TouchableWithoutFeedback>
                 </View>
                 <View style={ Styles.ItemsContainer }>
                     <View style={ Styles.Items }>

@@ -11,6 +11,7 @@ import NewsFeedContent from '../../components/newsContent/News'
 import Palestrantes from '../palestrantes/Palestrantes'
 import PalDetails from '../../components/palestrantesDetails/Detalhes'
 import Cronograma from '../cronograma/Cronograma'
+import Expositores from '../expositoresEscolares/Expositores'
 
 class Main extends Component {
 
@@ -108,37 +109,43 @@ const MainNavigator = createStackNavigator({
         screen: Main,
         navigationOptions: () => ({
             header: null
-          })
+        })
     },
     Palestrantes: {
         screen: Palestrantes,
         navigationOptions: () => ({
             header: null
-          })
+        })
     },
     DetalhesPalestrantes: {
         screen: PalDetails,
         navigationOptions: () => ({
             header: null
-          })
+        })
     },
     NewsFeed: {
         screen: Newsfeed,
         navigationOptions: () => ({
             header: null
-          })
+        })
     },
     NewsFeedContent: {
         screen: NewsFeedContent,
         navigationOptions: () => ({
             header: null
-          })
+        })
     },
     Cronograma: {
         screen: Cronograma,
         navigationOptions: () => ({
             header: null
-          })
+        })
+    },
+    Expositores: {
+        screen: Expositores,
+        navigationOptions: () => ({
+            header: null
+        })
     }
   },
   {

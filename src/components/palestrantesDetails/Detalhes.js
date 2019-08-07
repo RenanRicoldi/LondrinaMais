@@ -11,7 +11,7 @@ class PalDetails extends Component {
     
     render(){
 
-        const person = this.props.navigation.state.params;
+        const person = this.props.navigation.state.params
 
         return (
         <ScrollView>

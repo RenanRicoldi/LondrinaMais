@@ -9,31 +9,32 @@ class Palestrantes extends Component {
         super();
 
         this.state = {
-            people: []
+            expositores: []
         }
     }
+    
 
     componentDidMount() {
+        const url = this.props.navigation.getParam('type')
         axios
-        .get('http://www.json-generator.com/api/json/get/cfnxrNpuoO?indent=0')
+        .get(url)
         .then(response => {
-            const { listaPalestrantes } = response.data
+            const { listaExpositores } = response.data
             this.setState({
-                people: listaPalestrantes
+                expositores: listaExpositores
             })
         })
     }
 
-    drawContent(person) {
+    drawContent(expositor) {
         return (
-            <TouchableNativeFeedback key={person.nome} onPress={() => { this.props.navigation.navigate('DetalhesPalestrantes', person )}}>
-                <View style={Styles.palestrante}>
+            <TouchableNativeFeedback key={expositor.id} onPress={() => { this.props.navigation.navigate("DetalhesExpositoresEscolares", expositor ) }}>
+                <View style={Styles.expositor}>
                     <ImageBackground source={require('../../../assets/images/UserPic/UserPic.png')} style={Styles.image}>
-                        <Image style={Styles.image} source={{uri: person.picture }} />
+                        <Image style={Styles.image} source={{uri: expositor.picture }} />
                     </ImageBackground>
                     <View>
-                        <Text style={Styles.palNome}>{person.nome}</Text>
-                        <Text>{person.instituicao}</Text>
+                        <Text style={Styles.expositorNome}>{expositor.nome.length < 31 ? expositor.nome : `${expositor.nome.substring(0,31)}...`}</Text>
                     </View> 
                 </View>
             </TouchableNativeFeedback>
@@ -45,8 +46,8 @@ class Palestrantes extends Component {
             <View style={Styles.container}>
 
                 <ScrollView style={Styles.wrapper}>
-                    { this.state.people.map((person) => {
-                        return this.drawContent(person)
+                    { this.state.expositores.map((expositor) => {
+                        return this.drawContent(expositor)
                     })}
                 </ScrollView>
                 

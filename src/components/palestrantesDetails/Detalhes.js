@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, Image, StyleSheet } from 'react-native'
 import Styles from './Styles'
+import { ScrollView } from 'react-native-gesture-handler';
 
 class PalDetails extends Component {
 
@@ -13,7 +14,7 @@ class PalDetails extends Component {
         const person = this.props.navigation.state.params;
 
         return (
-        <View>
+        <ScrollView>
             <View>
                 <View style={Styles.fundoImagem}></View>
                 <View style={Styles.imageWrapper}>
@@ -35,7 +36,7 @@ class PalDetails extends Component {
             </View>
             </View>
 
-        </View>)
+        </ScrollView>)
     }
 }
 

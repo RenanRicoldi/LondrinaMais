@@ -28,8 +28,7 @@ const Styles = StyleSheet.create({
     },
     instit: {
         fontSize: 18,
-        fontWeight: '400'
-        
+        fontWeight: '400' 
     },
     sobreWrapper: {
         alignItems: 'center',

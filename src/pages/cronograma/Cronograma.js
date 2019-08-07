@@ -208,8 +208,8 @@ class Cronograma extends Component {
 				
 				<View flexDirection='row' flex={1} alignItems='center' justifyContent='space-around' marginBottom={5}>
 					<TouchableOpacity activeOpacity={0.9} style={Styles.btnSwitcher} onPress={() => this.setState({tipo:"palestra"})}><Text>Palestras</Text></TouchableOpacity>
-					<TouchableOpacity activeOpacity={0.9} style={Styles.btnSwitcher} onPress={() => this.setState({tipo:"oficina"})}><Text>Oficinas</Text></TouchableOpacity>
 					<TouchableOpacity activeOpacity={0.9} style={Styles.btnSwitcher} onPress={() => this.setState({tipo:"atv"})}><View><Text>Atividades</Text><Text>Interativas</Text></View></TouchableOpacity>
+					<TouchableOpacity activeOpacity={0.9} style={Styles.btnSwitcher} onPress={() => this.setState({tipo:"oficina"})}><Text>Oficinas</Text></TouchableOpacity>
 				</View>
 
 				<View flex={3}>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { View, Animated, Image, Text, Dimensions } from 'react-native'
+import { View, Animated, Image, Text, Dimensions, Linking } from 'react-native'
 
 import Styles from './Styles'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
+import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler'
 
 class Menu extends Component{
     render(){
@@ -55,8 +55,12 @@ class Menu extends Component{
                     </View>
                 </View>
                 <View style={ Styles.Logos }>
-                    <Image source={require('../../../assets/images/logoPrefeitura/Logo.png')} style={{ marginRight: 60 }}/>
-                    <Image source={require('../../../assets/images/logoRamo/Logo.png')}/>
+                    <TouchableOpacity activeOpacity={0.5} onPress={() => Linking.openURL(url='https://www.londrina.pr.gov.br')}>
+                        <Image source={require('../../../assets/images/logoPrefeitura/Logo.png')} style={{ marginRight: 60 }}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.5} onPress={() => Linking.openURL(url='https://ieeeuel.org')}>
+                        <Image source={require('../../../assets/images/logoRamo/Logo.png')}/>
+                    </TouchableOpacity>
                 </View>
             </Animated.View>
         )

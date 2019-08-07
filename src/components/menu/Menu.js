@@ -49,10 +49,10 @@ class Menu extends Component{
                         <Image source={require('../../../assets/icons/mapa/mapa.png')} style={{width: Dimensions.get('window').width/6, height:  Dimensions.get('window').width/8}} resize='contain'/>
                         <Text style={ Styles.TextItems }>Mapa</Text>
                     </View>
-                    <View style={ [Styles.Items, {marginLeft: 20}] }>
+                    <TouchableWithoutFeedback style={ [Styles.Items, {marginLeft: 20}] } onPress={() => this.props.navigation.navigate('Alimentacao')}>
                         <Image source={require('../../../assets/icons/alimentacao/alimentacao.png')} style={{width: Dimensions.get('window').width/6, height:  Dimensions.get('window').width/8}} resize='contain'/>
                         <Text style={ Styles.TextItems }>Alimentação</Text>
-                    </View>
+                    </TouchableWithoutFeedback>
                 </View>
                 <View style={ Styles.Logos }>
                     <TouchableOpacity activeOpacity={0.5} onPress={() => Linking.openURL(url='https://www.londrina.pr.gov.br')}>

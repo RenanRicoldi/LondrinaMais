@@ -11,6 +11,8 @@ import NewsFeedContent from '../../components/newsContent/News'
 import Palestrantes from '../palestrantes/Palestrantes'
 import PalDetails from '../../components/palestrantesDetails/Detalhes'
 import Cronograma from '../cronograma/Cronograma'
+import Alimentacao from '../alimentacao/Alimentacao'
+import DetalhesRestaurantes from '../../components/restaurantDetails/DetalhesRestaurante'
 
 class Main extends Component {
 
@@ -139,7 +141,19 @@ const MainNavigator = createStackNavigator({
         navigationOptions: () => ({
             header: null
           })
-    }
+    },
+    Alimentacao: {
+        screen: Alimentacao,
+        navigationOptions: () => ({
+            header: null
+          })
+    },
+    DetalhesRestaurantes: {
+        screen: DetalhesRestaurantes,
+        navigationOptions: () => ({
+            header: null
+          })
+    },
   },
   {
     initialRouteName: 'Main',

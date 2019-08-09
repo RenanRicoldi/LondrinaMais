@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View, Image, Alert, TouchableOpacity } from 'react-native'
 import Styles from './Styles'
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler'
+import { email } from 'react-native-communications'
 
 class PalDetails extends Component {
 
@@ -9,24 +10,31 @@ class PalDetails extends Component {
         super(props)
     }
 
-    formatEmail(person){
-        if(person.contato.length > 1)
-            return(person.contato)
-        else
-            return('Esse palestrante não informou um e-mail para contato')
-    }
-
     displayPhone(person){
-        return(
-            Alert.alert(
-                'Envie um e-mail',
-                this.formatEmail(person),
-                [
-                    {text: 'Voltar'},
-                    {text: 'Enviar'}
-                ]
+        if(person.contato.length > 1){
+            return(
+                Alert.alert(
+                    'Envie um e-mail',
+                    person.contato,
+                    [
+                        {text: 'Voltar'},
+                        {text: 'Enviar', onPress: () => email([person.contato],null,null,'Palestra do Londrina Mais','')}
+                    ],
+                    {cancelable: true}
+                )
             )
-        )
+        }else{
+            return(
+                Alert.alert(
+                    'Envie um e-mail',
+                    'Esse palestrante não informou um e-mail para contato',
+                    [
+                        {text: 'Voltar'},
+                    ],
+                    {cancelable: true}
+                )
+            )
+        }
     }
     
     render(){

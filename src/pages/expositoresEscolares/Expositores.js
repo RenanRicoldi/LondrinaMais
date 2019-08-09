@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { View, ScrollView, TouchableNativeFeedback, Image, Text, ImageBackground } from 'react-native'
+import { View, ScrollView, TouchableNativeFeedback, Image, Text, ImageBackground, Alert } from 'react-native'
+import { setup } from 'axios-cache-adapter'
 import axios from 'axios'
 import Styles from './Styles'
 
@@ -16,6 +17,12 @@ class Palestrantes extends Component {
 
     componentDidMount() {
         const url = this.props.navigation.getParam('type')
+        setup({
+            baseURL: url,
+            cache: {
+                maxAge: (24 * 60 * 60 * 1000)
+            }
+        })
         axios
         .get(url)
         .then(response => {
@@ -23,6 +30,10 @@ class Palestrantes extends Component {
             this.setState({
                 expositores: listaExpositores
             })
+        })
+        .catch( function (error) {
+            console.log(error);
+            () => {}
         })
     }
 

@@ -26,7 +26,8 @@ const Styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: '600',
         paddingRight: 5,
-        paddingLeft: 5
+        paddingLeft: 5,
+        textAlign: 'center'
     },
     instit: {
         fontSize: 18,

@@ -6,6 +6,7 @@ import {View,
         TouchableOpacity,
         Alert} from 'react-native'
 import Styles from './Styles'
+import { phonecall } from 'react-native-communications'
 
 let testImage = 'https://static.wixstatic.com/media/4fd224_4bbc412bc5dd4a10b2dc6d5fa534f2d3~mv2.jpg/v1/fit/w_139,h_95/4fd224_4bbc412bc5dd4a10b2dc6d5fa534f2d3~mv2.jpg'
 
@@ -22,7 +23,7 @@ class DetalhesRestaurantes extends Component {
                 rst.telefone,
                 [
                     {text: 'Voltar'},
-                    {text: 'Ligar'}
+                    {text: 'Ligar', onPress: () => phonecall(rst.telefone, true)}
                 ]
             )
         )

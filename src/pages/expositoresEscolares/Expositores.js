@@ -39,13 +39,13 @@ class Palestrantes extends Component {
 
     drawContent(expositor) {
         return (
-            <TouchableNativeFeedback key={expositor.id} onPress={() => { this.props.navigation.navigate("DetalhesExpositores", expositor ) }}>
+            <TouchableNativeFeedback key={expositor._id} onPress={() => { this.props.navigation.navigate("DetalhesExpositores", expositor ) }}>
                 <View style={Styles.expositor}>
                     <ImageBackground source={require('../../../assets/images/UserPic/UserPic.png')} style={Styles.image}>
                         <Image style={Styles.image} source={{uri: expositor.picture }} />
                     </ImageBackground>
                     <View>
-                        <Text style={Styles.expositorNome}>{expositor.nome.length < 31 ? expositor.nome : `${expositor.nome.substring(0,31)}...`}</Text>
+                        <Text style={Styles.expositorNome}>{expositor.title.length < 31 ? expositor.title : `${expositor.title.substring(0,31)}...`}</Text>
                     </View> 
                 </View>
             </TouchableNativeFeedback>

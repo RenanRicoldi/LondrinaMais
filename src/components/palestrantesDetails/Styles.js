@@ -24,11 +24,16 @@ const Styles = StyleSheet.create({
     },
     nome: {
         fontSize: 30,
-        fontWeight: '600'
+        fontWeight: '600',
+        paddingRight: 5,
+        paddingLeft: 5
     },
     instit: {
         fontSize: 18,
-        fontWeight: '400' 
+        fontWeight: '400' ,
+        paddingRight: 10,
+        paddingLeft: 10,
+        textAlign: 'center'
     },
     sobreWrapper: {
         alignItems: 'center',
@@ -39,13 +44,19 @@ const Styles = StyleSheet.create({
         fontStyle: 'italic'
     },
     sobreConteudo: {
-        fontSize: 16
+        fontSize: 16,
+        textAlign: 'justify'
     },
     bordaContato: {
+        alignItems: 'center',
         padding: 10
     },
     contatoWrapper: {
-        height: 100,
+        height: 50,
+        width: 200,
+        marginBottom: 15,
+        flexDirection: 'row',
+        justifyContent: 'center',
         borderWidth: 1,
         borderRadius: 10,
         borderColor: 'white',
@@ -54,14 +65,15 @@ const Styles = StyleSheet.create({
         alignItems: 'center'
     },
     contatoTitulo: {
-        fontWeight: '600',
+        fontWeight: 'bold',
+        fontSize: 14,
         justifyContent: 'center',
         color: 'white'
     },
-    contatoEmail:{
-        fontSize: 18,
-        marginTop: 12,
-        color: 'white'
+    iconEmail: {
+        width: 25,
+        height: 25,
+        marginRight: 6
     }
 })
 

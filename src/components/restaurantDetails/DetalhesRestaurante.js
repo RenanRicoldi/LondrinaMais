@@ -20,7 +20,11 @@ class DetalhesRestaurantes extends Component {
         return(
             Alert.alert(
                 'Telefone',
-                rst.phone
+                rst.telefone,
+                [
+                    {text: 'Voltar'},
+                    {text: 'Ligar'}
+                ]
             )
         )
     }
@@ -35,7 +39,7 @@ class DetalhesRestaurantes extends Component {
 
                 <View style={Styles.imageWrapper}>
                     <Image style={Styles.image} source={{uri: testImage }}></Image>
-                    <Text style={Styles.nomeRestaurante}>{rst.nome}</Text>
+                    <Text style={Styles.nomeRestaurante}>{rst.title}</Text>
                     <Text style={Styles.local}>{rst.local}</Text>
                 </View>
 
@@ -44,9 +48,9 @@ class DetalhesRestaurantes extends Component {
                 </span>
 
                 <View style={Styles.btnWrapper}>
-                    <TouchableOpacity activeOpacity={0.8} style={Styles.btnStyle} onPress={() => this.displayPhone(rst)}></TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.8} style={Styles.btnStyle}></TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.8} style={Styles.btnStyle}></TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.8} style={Styles.btnStyle} onPress={() => this.displayPhone(rst)}>
+                        <Image style={Styles.iconPhone} source={require('../../../assets/icons/contact/phone.png')}></Image>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={Styles.bordaCardapio}>

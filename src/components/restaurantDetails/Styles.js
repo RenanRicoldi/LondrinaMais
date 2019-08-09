@@ -39,10 +39,16 @@ const Styles = StyleSheet.create({
     btnStyle: {
         width: 45,
         height: 45,
+        alignItems: 'center',
         marginLeft: 10,
         marginRight: 10,
         borderRadius: 100,
         backgroundColor: '#66C500'
+    },
+    iconPhone: {
+        marginTop: 7.5,
+        width: 30,
+        height: 30,
     },
 
 

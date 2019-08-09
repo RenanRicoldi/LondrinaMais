@@ -15,7 +15,7 @@ class Palestrantes extends Component {
 
     componentDidMount() {
         axios
-        .get('http://www.json-generator.com/api/json/get/cfnxrNpuoO?indent=0')
+        .get('http://ieeeuel.org/_functions/api/lndmais-palestrantes')
         .then(response => {
             const { listaPalestrantes } = response.data
             this.setState({
@@ -26,14 +26,14 @@ class Palestrantes extends Component {
 
     drawContent(person) {
         return (
-            <TouchableNativeFeedback key={person.nome} onPress={() => { this.props.navigation.navigate('DetalhesPalestrantes', person )}}>
+            <TouchableNativeFeedback key={person._id} onPress={() => { this.props.navigation.navigate('DetalhesPalestrantes', person )}}>
                 <View style={Styles.palestrante}>
                     <ImageBackground source={require('../../../assets/images/UserPic/UserPic.png')} style={Styles.image}>
                         <Image style={Styles.image} source={{uri: person.picture }} />
                     </ImageBackground>
-                    <View>
-                        <Text style={Styles.palNome}>{person.nome}</Text>
-                        <Text>{person.instituicao}</Text>
+                    <View paddingRight={1} backgroundColor='black'>
+                        <Text style={Styles.palNome}>{person.title}</Text>
+                        <Text style={Styles.palInstituicao}>{person.instituicao}</Text>
                     </View> 
                 </View>
             </TouchableNativeFeedback>

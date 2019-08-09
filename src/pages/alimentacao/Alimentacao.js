@@ -19,7 +19,7 @@ class Alimentacao extends Component {
 
     componentDidMount() {
         axios
-        .get('https://next.json-generator.com/api/json/get/EJyDAEVQP?indent=0')
+        .get('http://ieeeuel.org/_functions/api/lndmais-alimentacao')
         .then(response => {
             const { listaRestaurantes } = response.data
             this.setState({
@@ -30,7 +30,7 @@ class Alimentacao extends Component {
 
     drawCardRestaurante(rst){
         return(
-            <TouchableNativeFeedback key={rst.id} onPress={() => this.props.navigation.navigate('DetalhesRestaurantes', rst)}>
+            <TouchableNativeFeedback key={rst._id} onPress={() => this.props.navigation.navigate('DetalhesRestaurantes', rst)}>
 
                 <View style={Styles.cardRestaurante}>
 
@@ -39,7 +39,7 @@ class Alimentacao extends Component {
                     </View>
 
                     <View style={Styles.sobreRestaurante}>
-                        <Text style={Styles.nomeRestaurante}>{rst.nome}</Text>
+                        <Text style={Styles.nomeRestaurante}>{rst.title}</Text>
                         <Text>{rst.local}</Text>
                     </View>
 

@@ -23,6 +23,9 @@ const Styles = StyleSheet.create({
         fontWeight: '600',
         fontSize: 16
     },
+    palInstituicao:{
+        marginRight: 20
+    },
     image: {
         width: 60,
         height: 60,

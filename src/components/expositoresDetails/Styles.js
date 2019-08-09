@@ -24,12 +24,36 @@ const Styles = StyleSheet.create({
     },
     nome: {
         fontSize: 30,
-        fontWeight: '600'
+        fontWeight: '600',
+        textAlign: 'center'
     },
-    instit: {
-        fontSize: 18,
-        fontWeight: '400' 
+    
+    btnWrapper: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: 15
     },
+    btnStyle: {
+        width: 45,
+        height: 45,
+        alignItems: 'center',
+        marginLeft: 10,
+        marginRight: 10,
+        borderRadius: 100,
+        backgroundColor: '#66C500'
+    },
+    iconPhone: {
+        marginTop: 7.5,
+        width: 30,
+        height: 30,
+    },
+    iconFacebook: {
+        marginTop: 9.5,
+        marginRight: 1,
+        width: 25,
+        height: 25,
+    },
+
     sobreWrapper: {
         alignItems: 'center',
         marginBottom: 15,
@@ -39,29 +63,8 @@ const Styles = StyleSheet.create({
         fontStyle: 'italic'
     },
     sobreConteudo: {
-        fontSize: 16
-    },
-    bordaContato: {
-        padding: 10
-    },
-    contatoWrapper: {
-        height: 100,
-        borderWidth: 1,
-        borderRadius: 10,
-        borderColor: 'white',
-        backgroundColor: '#66C500',
-        padding: 5,
-        alignItems: 'center'
-    },
-    contatoTitulo: {
-        fontWeight: '600',
-        justifyContent: 'center',
-        color: 'white'
-    },
-    contatoEmail:{
-        fontSize: 18,
-        marginTop: 12,
-        color: 'white'
+        fontSize: 16,
+        textAlign: 'justify'
     }
 })
 

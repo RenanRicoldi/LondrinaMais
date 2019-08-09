@@ -6,6 +6,7 @@ import {View,
         TouchableOpacity,
         Alert} from 'react-native'
 import Styles from './Styles'
+import { phonecall, email } from 'react-native-communications'
 
 let testImage = 'https://static.wixstatic.com/media/4fd224_4bbc412bc5dd4a10b2dc6d5fa534f2d3~mv2.jpg/v1/fit/w_139,h_95/4fd224_4bbc412bc5dd4a10b2dc6d5fa534f2d3~mv2.jpg'
 
@@ -37,6 +38,10 @@ class DetalhesRestaurantes extends Component {
                     <Text style={Styles.nomeRestaurante}>{rst.nome}</Text>
                     <Text style={Styles.local}>{rst.local}</Text>
                 </View>
+
+                <span itemprop="telephone">
+                    <Text href="tel:25266896">+55 (31) 2526-6896</Text>
+                </span>
 
                 <View style={Styles.btnWrapper}>
                     <TouchableOpacity activeOpacity={0.8} style={Styles.btnStyle} onPress={() => this.displayPhone(rst)}></TouchableOpacity>

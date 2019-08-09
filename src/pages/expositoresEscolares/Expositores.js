@@ -28,7 +28,7 @@ class Palestrantes extends Component {
 
     drawContent(expositor) {
         return (
-            <TouchableNativeFeedback key={expositor.id} onPress={() => { this.props.navigation.navigate("DetalhesExpositoresEscolares", expositor ) }}>
+            <TouchableNativeFeedback key={expositor.id} onPress={() => { this.props.navigation.navigate("DetalhesExpositores", expositor ) }}>
                 <View style={Styles.expositor}>
                     <ImageBackground source={require('../../../assets/images/UserPic/UserPic.png')} style={Styles.image}>
                         <Image style={Styles.image} source={{uri: expositor.picture }} />

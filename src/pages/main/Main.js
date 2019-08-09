@@ -14,6 +14,7 @@ import Cronograma from '../cronograma/Cronograma'
 import Expositores from '../expositoresEscolares/Expositores'
 import Alimentacao from '../alimentacao/Alimentacao'
 import DetalhesRestaurantes from '../../components/restaurantDetails/DetalhesRestaurante'
+import ExpDetails from '../../components/expositoresDetails/DetalhesExpositores'
 
 class Main extends Component {
 
@@ -159,8 +160,14 @@ const MainNavigator = createStackNavigator({
         screen: DetalhesRestaurantes,
         navigationOptions: () => ({
             header: null
-          })
+        })
     },
+    DetalhesExpositores: {
+        screen: ExpDetails,
+        navigationOptions: () => ({
+            header: null
+        })
+    }
   },
   {
     initialRouteName: 'Main',

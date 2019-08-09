@@ -12,9 +12,6 @@ class ExpDetails extends Component {
     render(){
 
         const expositor = this.props.navigation.state.params
-        if (expositor.picture === null){
-            expositor.picture = require('../../../assets/images/UserPic/UserPic.png')
-        }
 
         return (
         <ScrollView>

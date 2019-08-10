@@ -45,8 +45,8 @@ class Palestrantes extends Component {
                     <ImageBackground source={require('../../../assets/images/UserPic/UserPic.png')} style={Styles.image}>
                         <Image style={Styles.image} source={{uri: imageURL(expositor.foto) }} />
                     </ImageBackground>
-                    <View>
-                        <Text style={Styles.expositorNome}>{expositor.title.length < 31 ? expositor.title : `${expositor.title.substring(0,31)}...`}</Text>
+                    <View style={Styles.textWrap}>
+                        <Text style={Styles.expositorNome}>{expositor.title}</Text>
                     </View> 
                 </View>
             </TouchableNativeFeedback>

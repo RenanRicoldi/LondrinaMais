@@ -32,7 +32,7 @@ class Palestrantes extends Component {
                     <ImageBackground source={require('../../../assets/images/UserPic/UserPic.png')} style={Styles.image}>
                         <Image style={Styles.image} source={{uri: imageURL(person.foto) }} />
                     </ImageBackground>
-                    <View>
+                    <View style={Styles.textWrap}>
                         <Text style={Styles.palNome}>{person.title}</Text>
                         <Text style={Styles.palInstituicao}>{person.instituicao}</Text>
                     </View> 

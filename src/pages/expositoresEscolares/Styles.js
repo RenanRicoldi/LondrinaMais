@@ -14,10 +14,11 @@ const Styles = StyleSheet.create({
     textoTopo: {
         alignSelf:'center',
         marginBottom: 10
-      },
+    },
 
     expositor: {
         flexDirection: 'row',
+        alignItems: 'center',
         marginBottom: 10,
         backgroundColor: 'white',
         borderBottomRightRadius: 30,
@@ -26,6 +27,10 @@ const Styles = StyleSheet.create({
         borderBottomLeftRadius: 8,
         padding: 5,
         alignItems: 'center'
+    },
+    textWrap:{
+        flexDirection: 'column',
+        flex: 0.9    
     },
     expositorNome:{
         fontWeight: '600',

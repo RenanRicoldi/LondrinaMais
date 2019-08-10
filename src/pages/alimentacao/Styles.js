@@ -15,6 +15,7 @@ const Styles = StyleSheet.create({
 
     cardRestaurante: {
         flexDirection: 'row',
+        alignItems: 'center',
         marginBottom: 10,
         backgroundColor: 'white',
         borderRadius: 4,
@@ -28,7 +29,8 @@ const Styles = StyleSheet.create({
         marginRight: 8
     },
     sobreRestaurante: {
-        justifyContent: 'center'
+        flexDirection: 'column',
+        flex: 0.9    
     },
     nomeRestaurante: {
         fontSize: 20,

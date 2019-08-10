@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, ScrollView, TouchableNativeFeedback, Image, Text, ImageBackground, Alert } from 'react-native'
 import { setup } from 'axios-cache-adapter'
 import axios from 'axios'
+import { imageURL } from '../../utils/ImageURL'
 import Styles from './Styles'
 
 class Palestrantes extends Component {
@@ -42,7 +43,7 @@ class Palestrantes extends Component {
             <TouchableNativeFeedback key={expositor._id} onPress={() => { this.props.navigation.navigate("DetalhesExpositores", expositor ) }}>
                 <View style={Styles.expositor}>
                     <ImageBackground source={require('../../../assets/images/UserPic/UserPic.png')} style={Styles.image}>
-                        <Image style={Styles.image} source={{uri: expositor.picture }} />
+                        <Image style={Styles.image} source={{uri: imageURL(expositor.foto) }} />
                     </ImageBackground>
                     <View>
                         <Text style={Styles.expositorNome}>{expositor.title.length < 31 ? expositor.title : `${expositor.title.substring(0,31)}...`}</Text>
@@ -56,7 +57,11 @@ class Palestrantes extends Component {
         return (
             <View style={Styles.container}>
 
+
                 <ScrollView style={Styles.wrapper}>
+
+                    <Text style={Styles.textoTopo}>Toque no card para ver mais informações</Text>
+
                     { this.state.expositores.map((expositor) => {
                         return this.drawContent(expositor)
                     })}

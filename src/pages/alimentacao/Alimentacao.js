@@ -5,6 +5,7 @@ import {View,
         Image,
         TouchableNativeFeedback} from 'react-native'
 import axios from 'axios'
+import { imageURL } from '../../utils/ImageURL'
 import Styles from './Styles'
 
 class Alimentacao extends Component {
@@ -35,7 +36,7 @@ class Alimentacao extends Component {
                 <View style={Styles.cardRestaurante}>
 
                     <View>
-                        <Image style={Styles.image} source={{uri: rst.foto}}></Image>
+                        <Image style={Styles.image} source={{uri: imageURL(rst.foto) }}></Image>
                     </View>
 
                     <View style={Styles.sobreRestaurante}>

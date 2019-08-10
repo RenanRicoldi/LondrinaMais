@@ -11,6 +11,11 @@ const Styles = StyleSheet.create({
         flex: 1,
     },
 
+    textoTopo: {
+        alignSelf:'center',
+        marginBottom: 10
+      },
+
     expositor: {
         flexDirection: 'row',
         marginBottom: 10,

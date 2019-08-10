@@ -17,10 +17,10 @@ const Styles = StyleSheet.create({
         width: 200,
         height: 200,
         borderWidth: 5,
-        borderRadius: 100,
+        borderRadius: 8,
         borderColor: '#66C500',
         backgroundColor: 'white',
-        marginBottom: 5,
+        marginBottom: 5
     },
     nome: {
         fontSize: 30,

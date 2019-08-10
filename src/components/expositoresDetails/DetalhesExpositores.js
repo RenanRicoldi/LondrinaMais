@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, Image, ImageBackground, TouchableOpacity, Alert} from 'react-native'
 import Styles from './Styles'
 import { ScrollView } from 'react-native-gesture-handler';
+import { imageURL } from '../../utils/ImageURL'
 
 class ExpDetails extends Component {
 
@@ -65,7 +66,7 @@ class ExpDetails extends Component {
             <View>
                 <View style={Styles.fundoImagem}></View>
                 <View style={Styles.imageWrapper}>
-                    <Image style={Styles.image} source={{uri: expositor.picture}} />
+                    <Image style={Styles.image} source={{uri: imageURL(expositor.foto)}} resizeMode='contain'/>
                     <Text style={Styles.nome}>{expositor.title}</Text>
                 </View>
             </View>

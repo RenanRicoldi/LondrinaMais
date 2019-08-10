@@ -6,6 +6,7 @@ import {View,
         Image,
         TouchableNativeFeedback} from 'react-native'
 import axios from 'axios'
+import { imageURL } from '../../utils/ImageURL'
 import Styles from './Styles'
 
 class Newsfeed extends Component {

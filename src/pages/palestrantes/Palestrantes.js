@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, ScrollView, TouchableNativeFeedback, Image, Text, ImageBackground } from 'react-native'
 import axios from 'axios'
+import { imageURL } from '../../utils/ImageURL'
 import Styles from './Styles'
 
 class Palestrantes extends Component {
@@ -29,7 +30,7 @@ class Palestrantes extends Component {
             <TouchableNativeFeedback key={person._id} onPress={() => { this.props.navigation.navigate('DetalhesPalestrantes', person )}}>
                 <View style={Styles.palestrante}>
                     <ImageBackground source={require('../../../assets/images/UserPic/UserPic.png')} style={Styles.image}>
-                        <Image style={Styles.image} source={{uri: person.picture }} />
+                        <Image style={Styles.image} source={{uri: imageURL(person.foto) }} />
                     </ImageBackground>
                     <View>
                         <Text style={Styles.palNome}>{person.title}</Text>

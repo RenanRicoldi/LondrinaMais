@@ -3,6 +3,7 @@ import { Text, View, Image, Alert, TouchableOpacity } from 'react-native'
 import Styles from './Styles'
 import { ScrollView } from 'react-native-gesture-handler'
 import { email } from 'react-native-communications'
+import { imageURL } from '../../utils/ImageURL'
 
 class PalDetails extends Component {
 
@@ -46,7 +47,7 @@ class PalDetails extends Component {
             <View>
                 <View style={Styles.fundoImagem}></View>
                 <View style={Styles.imageWrapper}>
-                    <Image style={Styles.image} source={{uri: person.picture }} />
+                    <Image style={Styles.image} source={{uri: imageURL(person.foto) }} />
                     <Text style={Styles.nome}>{person.title}</Text>
                     <Text style={Styles.instit}>{person.instituicao}</Text>
                 </View>

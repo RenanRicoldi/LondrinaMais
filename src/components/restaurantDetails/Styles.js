@@ -24,11 +24,13 @@ const Styles = StyleSheet.create({
     },
     nomeRestaurante: {
         fontSize: 30,
-        fontWeight: '600'
+        fontWeight: '600',
+        textAlign: 'center'
     },
     local: {
         fontSize: 18,
-        fontWeight: '400' 
+        fontWeight: '400',
+        textAlign: 'center'
     },
 
     btnWrapper: {
@@ -79,7 +81,8 @@ const Styles = StyleSheet.create({
     },
     conteudoCardapio: {
         alignSelf: 'center',
-        fontSize: 18
+        fontSize: 18,
+        textAlign:'center'
     },
 
     iconeAlimentacao: {

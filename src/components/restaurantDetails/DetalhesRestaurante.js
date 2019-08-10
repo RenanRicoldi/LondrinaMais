@@ -6,9 +6,8 @@ import {View,
         TouchableOpacity,
         Alert} from 'react-native'
 import Styles from './Styles'
+import { imageURL } from '../../utils/ImageURL'
 import { phonecall } from 'react-native-communications'
-
-let testImage = 'https://static.wixstatic.com/media/4fd224_4bbc412bc5dd4a10b2dc6d5fa534f2d3~mv2.jpg/v1/fit/w_139,h_95/4fd224_4bbc412bc5dd4a10b2dc6d5fa534f2d3~mv2.jpg'
 
 class DetalhesRestaurantes extends Component {
 
@@ -38,7 +37,7 @@ class DetalhesRestaurantes extends Component {
                 <View style={Styles.fundoImagem}></View>
 
                 <View style={Styles.imageWrapper}>
-                    <Image style={Styles.image} source={{uri: testImage }}></Image>
+                    <Image style={Styles.image} source={{uri: imageURL(rst.foto) }}></Image>
                     <Text style={Styles.nomeRestaurante}>{rst.title}</Text>
                     <Text style={Styles.local}>{rst.local}</Text>
                 </View>

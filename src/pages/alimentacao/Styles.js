@@ -9,12 +9,13 @@ const Styles = StyleSheet.create({
     },
     
     textoTopo: {
-      alignSelf:'center'
+      alignSelf:'center',
+      marginBottom: 10
     },
 
     cardRestaurante: {
         flexDirection: 'row',
-        marginTop: 10,
+        marginBottom: 10,
         backgroundColor: 'white',
         borderRadius: 4,
         padding: 5

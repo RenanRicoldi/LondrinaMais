@@ -9,6 +9,12 @@ const Styles = StyleSheet.create({
     wrapper: {
         flex: 1,
     },
+
+    textoTopo: {
+        alignSelf:'center',
+        marginBottom: 10
+    },
+
     palestrante: {
         flexDirection: 'row',
         alignItems: 'center',

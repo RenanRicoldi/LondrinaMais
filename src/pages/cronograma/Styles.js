@@ -17,6 +17,14 @@ const Styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems:'center'
     },
+    btnImage: {
+        height: Dimensions.get("window").width / 6,
+        width: Dimensions.get("window").width / 6
+    },
+    btnImageAtvInterativas:{
+        height: Dimensions.get("window").width / 7,
+        width: Dimensions.get("window").width / 5
+    },
 
     pickerStl:{
         backgroundColor: 'white',

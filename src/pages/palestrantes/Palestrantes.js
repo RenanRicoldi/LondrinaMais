@@ -46,6 +46,9 @@ class Palestrantes extends Component {
             <View style={Styles.container}>
 
                 <ScrollView style={Styles.wrapper}>
+
+                    <Text style={Styles.textoTopo}>Toque no card para ver mais informações</Text>
+
                     { this.state.people.map((person) => {
                         return this.drawContent(person)
                     })}

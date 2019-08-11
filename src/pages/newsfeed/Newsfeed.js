@@ -21,7 +21,7 @@ class Newsfeed extends Component {
 
     componentDidMount() {
         axios
-        .get('http://www.json-generator.com/api/json/get/bOEeSKLnci?indent=0')
+        .get('http://ieeeuel.org/_functions/api/lndmais-newsfeed')
         .then(response => {
             const { newsFeed } = response.data
             this.setState({
@@ -32,11 +32,11 @@ class Newsfeed extends Component {
 
     drawCard(noticia){
         return(
-            <TouchableNativeFeedback key={ noticia.id } onPress={() => { this.props.navigation.navigate("NewsFeedContent", {image : true, titulo: noticia.titulo, texto: noticia.conteudo, imgURL: noticia.picture} ) }}>
+            <TouchableNativeFeedback key={ noticia._id } onPress={() => { this.props.navigation.navigate("NewsFeedContent", {image : true, titulo: noticia.title, texto: noticia.noticia, imgURL: noticia.foto} ) }}>
             <View style={Styles.newsCard}>
-                    <Image style={Styles.newsCardImage} source={{uri: noticia.picture }}></Image>
+                    <Image style={Styles.newsCardImage} source={{uri: imageURL(noticia.foto) }}></Image>
                     <View style={Styles.newsCardContent}> 
-                        <Text style={Styles.newsCardTitle}>{noticia.titulo}</Text>
+                        <Text style={Styles.newsCardTitle}>{noticia.title}</Text>
                     </View> 
             </View>
             </TouchableNativeFeedback>
@@ -45,18 +45,18 @@ class Newsfeed extends Component {
 
     drawCardNoPicture(noticia){
         return(
-            <TouchableNativeFeedback key={ noticia.id } onPress={() => { this.props.navigation.navigate("NewsFeedContent", {image : false, titulo: noticia.titulo, texto: noticia.conteudo, imgURL: noticia.picture} ) }}>
+            <TouchableNativeFeedback key={ noticia._id } onPress={() => { this.props.navigation.navigate("NewsFeedContent", {image : false, titulo: noticia.title, texto: noticia.noticia, imgURL: noticia.foto} ) }}>
             <View style={Styles.newsCardNoPicture}>
                     <View style={Styles.newsCardContent}> 
                         <Text style={Styles.newsCardTitle}>
-                            {noticia.titulo.length <= 100?
-                            noticia.titulo:
-                            `${noticia.conteudo.substring(0,65)}...`}
+                            {noticia.title.length <= 100?
+                            noticia.title:
+                            `${noticia.noticia.substring(0,65)}...`}
                         </Text>
                         <Text style={Styles.newsCardDesc} numberOfLines={2}>
-                            {noticia.conteudo.length < 100?
-                            noticia.conteudo:
-                            `${noticia.conteudo.substring(0,100)}...`}
+                            {noticia.noticia.length < 100?
+                            noticia.noticia:
+                            `${noticia.noticia.substring(0,100)}...`}
                         </Text>
                     </View> 
             </View>
@@ -71,7 +71,7 @@ class Newsfeed extends Component {
 
                 <ScrollView>
                 { this.state.news.map((noticia) => {
-                        return (noticia.imagem)?
+                        return (noticia.foto)?
                             this.drawCard(noticia):
                             this.drawCardNoPicture(noticia)
                     })}

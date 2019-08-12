@@ -7,7 +7,7 @@ import Styles from './Styles'
 const IsItOver = () => {
     const now = new Animated.Value(hours() + days())
 
-    if(now !== 0){
+    if(now > 0){
         return(
             <>
                 <View style={{alignItems: 'center'}}>

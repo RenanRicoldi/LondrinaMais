@@ -31,7 +31,7 @@ const Styles = StyleSheet.create({
         backgroundColor: '#fff',
         width: Dimensions.get('window').width/2.8,
         height: Dimensions.get('window').height/7,
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10,
         paddingTop: 10,

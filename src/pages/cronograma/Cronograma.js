@@ -3,7 +3,8 @@ import {View,
         ScrollView,
         Text,
 		Image,
-		Picker} from 'react-native'
+		Picker,
+		Dimensions} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import axios from 'axios'
 import Styles from './Styles'
@@ -64,9 +65,35 @@ class Cronograma extends Component {
 			<View style={Styles.container}>
 				
 				<View flexDirection='row' flex={1} alignItems='center' justifyContent='space-around' marginBottom={5}>
-					<TouchableOpacity activeOpacity={0.9} style={Styles.btnSwitcher} onPress={() => this.setState({tipo:"palestra"})}><Text>Palestras</Text></TouchableOpacity>
-					<TouchableOpacity activeOpacity={0.9} style={Styles.btnSwitcher} onPress={() => this.setState({tipo:"atvinterativa"})}><View><Text>Atividades</Text><Text>Interativas</Text></View></TouchableOpacity>
-					<TouchableOpacity activeOpacity={0.9} style={Styles.btnSwitcher} onPress={() => this.setState({tipo:"oficina"})}><Text>Oficinas</Text></TouchableOpacity>
+					
+					<View>
+					<TouchableOpacity activeOpacity={0.9} onPress={() => this.setState({tipo:"palestra"})}>
+						<View style={Styles.btnSwitcher}>
+							<Image style={Styles.btnImage} source={require('../../../assets/icons/botoesCronograma/palestras.png')} />
+							<Text style = {{ fontSize: Dimensions.get('window').height/55}}>Palestras</Text>
+						</View>
+					</TouchableOpacity>
+					</View>
+
+
+					<View>
+					<TouchableOpacity activeOpacity={0.9} style={Styles.btnSwitcher} onPress={() => this.setState({tipo:"atvinterativa"})}>
+						<View style={Styles.btnSwitcher}>
+							<Image style={Styles.btnImageAtvInterativas} source={require('../../../assets/icons/botoesCronograma/atvinterativas.png')} />
+							<Text style = {{ fontSize: Dimensions.get('window').height/55 }}>Atividades</Text><Text style = {{ fontSize: Dimensions.get('window').height/55 }}>Interativas</Text>
+						</View>
+					</TouchableOpacity>
+					</View>
+
+					<View>
+					<TouchableOpacity activeOpacity={0.9} style={Styles.btnSwitcher} onPress={() => this.setState({tipo:"oficina"})}>
+						<View style={Styles.btnSwitcher}>
+							<Image style={Styles.btnImage} source={require('../../../assets/icons/botoesCronograma/oficinas.png')} />
+							<Text style = {{ fontSize: Dimensions.get('window').height/55 }}>Oficinas</Text>
+						</View>
+					</TouchableOpacity>
+					</View>
+
 				</View>
 
 				<View flex={3}>

@@ -11,7 +11,8 @@ class Palestrantes extends Component {
         super();
 
         this.state = {
-            expositores: []
+            expositores: [],
+            loading: true
         }
     }
     
@@ -29,12 +30,13 @@ class Palestrantes extends Component {
         .then(response => {
             const { listaExpositores } = response.data
             this.setState({
-                expositores: listaExpositores
+                expositores: listaExpositores,
+                loading: true
             })
         })
-        .catch( function (error) {
-            console.log(error);
-            () => {}
+        .catch(error => {
+            console.log(error)
+            this.setState({loading: false})
         })
     }
 
@@ -52,21 +54,30 @@ class Palestrantes extends Component {
     }
 
     render() {
-        return (
-            <View style={Styles.container}>
-
-
-                <ScrollView style={Styles.wrapper}>
-
-                    <Text style={Styles.textoTopo}>Toque no card para ver mais informações</Text>
-
-                    { this.state.expositores.map((expositor) => {
-                        return this.drawContent(expositor)
-                    })}
-                </ScrollView>
-                
-            </View>
-        )
+        if(this.state.loading === true){
+            return (
+                <View style={Styles.container}>
+    
+    
+                    <ScrollView style={Styles.wrapper}>
+    
+                        <Text style={Styles.textoTopo}>Toque no card para ver mais informações</Text>
+    
+                        { this.state.expositores.map((expositor) => {
+                            return this.drawContent(expositor)
+                        })}
+                    </ScrollView>
+                    
+                </View>
+            )
+        } else {
+            return(
+                <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#97DB4F', flex: 1 }}>
+                    <Text style={ { fontSize: 15 }}>Não foi possível baixar os dados</Text>
+                    <Text style={{ fontSize: 20 }}>Cheque sua internet</Text>  
+                </View>
+            )
+        }
     }
 }
 

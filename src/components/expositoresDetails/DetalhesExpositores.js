@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Text, View, Image, ImageBackground, TouchableOpacity, Alert} from 'react-native'
+import { Text, View, Image, ImageBackground, TouchableOpacity, Alert, Linking} from 'react-native'
 import Styles from './Styles'
 import { ScrollView } from 'react-native-gesture-handler';
 import { imageURL } from '../../utils/ImageURL'
+import { phonecall, email } from 'react-native-communications'
 
 class ExpDetails extends Component {
 
@@ -17,8 +18,9 @@ class ExpDetails extends Component {
                 expositor.telefone,
                 [
                     {text: 'Voltar'},
-                    {text: 'Ligar'}
-                ]
+                    {text: 'Ligar', onPress: () => phonecall(expositor.telefone, true)}
+                ],
+                {cancelable: true}
             )
         )
     }
@@ -30,8 +32,9 @@ class ExpDetails extends Component {
                 expositor.email,
                 [
                     {text: 'Voltar'},
-                    {text: 'Enviar e-mail'}
-                ]
+                    {text: 'Enviar', onPress: () => email([expositor.email],null,null,'Expositor do Londrina Mais','')}
+                ],
+                {cancelable: true}
             )
         )
     }
@@ -42,8 +45,13 @@ class ExpDetails extends Component {
                 'Facebook',
                 expositor.facebook,
                 [
-                    {text: 'Voltar'}
-                ]
+                    {text: 'Voltar'},
+                    {text: 'Procurar', onPress: () => {
+                        const string = expositor.facebook.replace(/ /g, "%20")    
+                        Linking.openURL(url=`https://www.facebook.com/search/top/?q=${string}&epa=SEARCH_BOX`)
+                    }}
+                ],
+                {cancelable: true}
             )
         )
     }
@@ -66,7 +74,7 @@ class ExpDetails extends Component {
             <View>
                 <View style={Styles.fundoImagem}></View>
                 <View style={Styles.imageWrapper}>
-                    <Image style={Styles.image} source={{uri: imageURL(expositor.foto)}} resizeMode='contain'/>
+                    <Image style={Styles.image} source={{uri: imageURL(expositor.foto)}} resizeMode='stretch'/>
                     <Text style={Styles.nome}>{expositor.title}</Text>
                 </View>
             </View>

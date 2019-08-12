@@ -14,7 +14,8 @@ class Alimentacao extends Component {
         super();
 
         this.state = {
-            restaurantes: []
+            restaurantes: [],
+            loading: true
         }
     }
 
@@ -24,8 +25,13 @@ class Alimentacao extends Component {
         .then(response => {
             const { listaRestaurantes } = response.data
             this.setState({
-                restaurantes: listaRestaurantes
+                restaurantes: listaRestaurantes,
+                loading: true
             })
+        })
+        .catch(error => {
+            console.log(error)
+            this.setState({loading: false})
         })
     }
 
@@ -51,22 +57,28 @@ class Alimentacao extends Component {
     }
 
     render() {
-        return (
-            <View style={Styles.container}>
+        if(this.state.loading === true){
+            return (
+                <View style={Styles.container}>   
+                    <ScrollView>    
+                    <Text style={Styles.textoTopo}>Toque no card para ver mais informações</Text>   
+                    { this.state.restaurantes.map((rst) => {
+                            return this.drawCardRestaurante(rst)
+                        })}
+    
+                    </ScrollView>
+                </View>
+            )
+        } else {
+            return(
+                <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#97DB4F', flex: 1 }}>
+                    <Text style={ { fontSize: 15 }}>Não foi possível baixar os dados</Text>
+                    <Text style={{ fontSize: 20 }}>Cheque sua internet</Text>  
+                </View>
+            )
+        }
 
-                <ScrollView>
-
-                <Text style={Styles.textoTopo}>Toque no card para ver mais informações</Text>
-
-                { this.state.restaurantes.map((rst) => {
-                        return this.drawCardRestaurante(rst)
-                    })}
-
-                </ScrollView>
-
-
-            </View>
-        )
+        
     }
 
 

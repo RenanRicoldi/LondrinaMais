@@ -15,7 +15,8 @@ class Newsfeed extends Component {
         super();
 
         this.state = {
-            news: []
+            news: [],
+            loading: true
         }
     }
 
@@ -25,8 +26,13 @@ class Newsfeed extends Component {
         .then(response => {
             const { newsFeed } = response.data
             this.setState({
-                news: newsFeed
+                news: newsFeed,
+                loading: true
             })
+        })
+        .catch(error => {
+            console.log(error)
+            this.setState({loading: false})
         })
     }
 
@@ -63,22 +69,28 @@ class Newsfeed extends Component {
             </TouchableNativeFeedback>
         );
     }
-
+    
     render() {
-
-        return(
-            <View style={Styles.container}>
-
-                <ScrollView>
-                { this.state.news.map((noticia) => {
-                        return (noticia.foto)?
-                            this.drawCard(noticia):
-                            this.drawCardNoPicture(noticia)
-                    })}
-                </ScrollView>
-                
-            </View>
-        );
+        if(this.state.loading === true){
+            return(
+                <View style={Styles.container}>
+                    <ScrollView>
+                    { this.state.news.map((noticia) => {
+                            return (noticia.foto)?
+                                this.drawCard(noticia):
+                                this.drawCardNoPicture(noticia)
+                        })}
+                    </ScrollView>
+                </View>
+            )
+        } else {
+            return(
+                <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#97DB4F', flex: 1 }}>
+                    <Text style={ { fontSize: 15 }}>Não foi possível baixar os dados</Text>
+                    <Text style={{ fontSize: 20 }}>Cheque sua internet</Text>  
+                </View>
+            )
+        }
 
     }
 

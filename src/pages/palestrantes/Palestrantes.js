@@ -10,7 +10,8 @@ class Palestrantes extends Component {
         super();
 
         this.state = {
-            people: []
+            people: [],
+            loading: true
         }
     }
 
@@ -20,8 +21,13 @@ class Palestrantes extends Component {
         .then(response => {
             const { listaPalestrantes } = response.data
             this.setState({
-                people: listaPalestrantes
+                people: listaPalestrantes,
+                loading: true
             })
+        })
+        .catch(error => {
+            console.log(error)
+            this.setState({loading: false})
         })
     }
 
@@ -42,20 +48,29 @@ class Palestrantes extends Component {
     }
 
     render() {
-        return (
-            <View style={Styles.container}>
-
-                <ScrollView style={Styles.wrapper}>
-
-                    <Text style={Styles.textoTopo}>Toque no card para ver mais informações</Text>
-
-                    { this.state.people.map((person) => {
-                        return this.drawContent(person)
-                    })}
-                </ScrollView>
-                
-            </View>
-        )
+        if(this.state.loading === true){
+            return (
+                <View style={Styles.container}>
+    
+                    <ScrollView style={Styles.wrapper}>
+    
+                        <Text style={Styles.textoTopo}>Toque no card para ver mais informações</Text>
+    
+                        { this.state.people.map((person) => {
+                            return this.drawContent(person)
+                        })}
+                    </ScrollView>
+                    
+                </View>
+            )
+        } else {
+            return(
+                <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#97DB4F', flex: 1 }}>
+                    <Text style={ { fontSize: 15 }}>Não foi possível baixar os dados</Text>
+                    <Text style={{ fontSize: 20 }}>Cheque sua internet</Text>  
+                </View>
+            )
+        }
     }
 }
 

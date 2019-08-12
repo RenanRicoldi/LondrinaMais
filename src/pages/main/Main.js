@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Image, StatusBar, Dimensions, Animated } from 'react-native'   
+import { View, Text, Image, StatusBar, Dimensions, Animated, Alert } from 'react-native'   
 import { PanGestureHandler, State, TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import {createStackNavigator, createAppContainer} from 'react-navigation'
 import Styles, { Icone } from './Styles'
@@ -15,8 +15,13 @@ import Expositores from '../expositoresEscolares/Expositores'
 import Alimentacao from '../alimentacao/Alimentacao'
 import DetalhesRestaurantes from '../../components/restaurantDetails/DetalhesRestaurante'
 import ExpDetails from '../../components/expositoresDetails/DetalhesExpositores'
+import { AndroidBackHandler } from 'react-navigation-backhandler'
 
 class Main extends Component {
+
+    onBackButtonPressAndroid = () => {
+        return(this.props.navigation.navigate('Main'))
+    }
 
     measureMenuMargin(){
 
@@ -99,7 +104,9 @@ class Main extends Component {
                                 }}/>
                             </Animated.View>
                         </PanGestureHandler>
-                        <Menu transY={ transY } navigation={ this.props.navigation }/>    
+                        <AndroidBackHandler onBackPress={this.onBackButtonPressAndroid}>
+                            <Menu transY={ transY } navigation={ this.props.navigation }/>
+                        </AndroidBackHandler>
                     </View>            
                 </View>
             </>

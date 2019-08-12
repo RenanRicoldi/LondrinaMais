@@ -42,9 +42,7 @@ class Palestrantes extends Component {
         return (
             <TouchableNativeFeedback key={expositor._id} onPress={() => { this.props.navigation.navigate("DetalhesExpositores", expositor ) }}>
                 <View style={Styles.expositor}>
-                    <ImageBackground source={require('../../../assets/images/UserPic/UserPic.png')} style={Styles.image}>
-                        <Image style={Styles.image} source={{uri: imageURL(expositor.foto) }} />
-                    </ImageBackground>
+                    <Image style={Styles.image} source={{uri: imageURL(expositor.foto) }} resizeMode='center'/>
                     <View style={Styles.textWrap}>
                         <Text style={Styles.expositorNome}>{expositor.title}</Text>
                     </View> 

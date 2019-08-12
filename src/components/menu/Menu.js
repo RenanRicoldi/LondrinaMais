@@ -5,6 +5,7 @@ import Styles from './Styles'
 import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler'
 
 class Menu extends Component{
+
     render(){
         return(
             <Animated.View style={[Styles.Menu,{

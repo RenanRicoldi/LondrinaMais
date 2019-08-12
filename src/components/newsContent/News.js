@@ -4,6 +4,7 @@ import {View,
         Image,
         ScrollView} from 'react-native'
 import { imageURL } from '../../utils/ImageURL'
+import HTMLView from 'react-native-htmlview';
 import Styles from './Styles'
 
 class News extends Component {
@@ -19,7 +20,7 @@ class News extends Component {
                 <Image style={Styles.newsImage} source={ {uri: imageURL(info.imgURL) } }></Image>
                 <ScrollView style={Styles.newsContent}>
                     <Text style={Styles.newsTitle}>{info.titulo}</Text>
-                    <Text style={Styles.newsText}>{info.texto}</Text>
+                    <HTMLView value={info.texto} stylesheet={Styles.newsText}/>
                 </ScrollView>
             </View>              
         );
@@ -29,7 +30,7 @@ class News extends Component {
         return(
             <ScrollView style={Styles.newsContent}>
                 <Text style={Styles.newsTitle}>{info.titulo}</Text>
-                <Text style={Styles.newsText}>{info.texto}</Text>
+                <HTMLView value={info.texto} stylesheet={styles}/>
             </ScrollView>               
         )
     }

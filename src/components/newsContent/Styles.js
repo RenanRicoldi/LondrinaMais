@@ -23,7 +23,6 @@ const Styles = StyleSheet.create({
         marginBottom: 5
     },
     newsText: {
-        fontSize: 16,
         marginBottom: 5,
         fontWeight: '300',
         color: '#FF3366', // make links coloured pink

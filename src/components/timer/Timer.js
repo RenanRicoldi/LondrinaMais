@@ -5,7 +5,7 @@ import { hours, days } from '../../utils/Time'
 import Styles from './Styles'
 
 const IsItOver = () => {
-    const now = new Animated.Value(hours() + days())
+    const now = hours() + days()
 
     if(now > 0){
         return(
@@ -24,7 +24,7 @@ const IsItOver = () => {
         return(
             <>
                 <View style={{alignItems: 'center'}}>
-                    <Text style={{fontSize: 50, color: 'white'}}>Começou!</Text>
+                    <Text style={{fontSize: Dimensions.get('window').width/11, color: 'white'}}>Começou!</Text>
                 </View>
             </>
         )

@@ -4,7 +4,8 @@ import {View,
         Text,
 		Image,
 		Picker,
-		Dimensions} from 'react-native'
+		Dimensions,
+		Alert} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import axios from 'axios'
 import Styles from './Styles'
@@ -42,6 +43,20 @@ class Cronograma extends Component {
         })
 	}
 
+	nomeTema(info){
+        if(info.tema.length >= 60)
+            return(
+                Alert.alert(
+                    'Tema',
+                    info.tema,
+                    [
+                        {text: 'Voltar'}
+                    ],
+                    {cancelable: true}
+                )
+			)
+	}
+
 	drawCard(info){
 
 		if( info.title === this.state.day && info.tipo === this.state.tipo )
@@ -53,9 +68,9 @@ class Cronograma extends Component {
 							<Text style={Styles.cardTitle}> - {info.local}</Text> 
 						</View>
 
-						<View flex={3} justifyContent='center'>
-							<Text style={Styles.cardTema}>{info.tema}</Text>
-						</View>
+						<TouchableOpacity activeOpacity={1} onPress={() => this.nomeTema(info)}> 
+							<Text style={Styles.cardTema}>{info.tema.length < 60 ? info.tema : `${info.tema.substring(0,60)}...`}</Text>
+						</TouchableOpacity>
 
 						<View flex={1} justifyContent='flex-end'>
 							<Text>{info.palestrante} </Text>

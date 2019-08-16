@@ -22,7 +22,7 @@ class Newsfeed extends Component {
 
     componentDidMount() {
         axios
-        .get('http://ieeeuel.org/_functions/api/lndmais-newsfeed')
+        .get('https://ieeeuel.org/_functions/api/lndmais-newsfeed')
         .then(response => {
             const { newsFeed } = response.data
             this.setState({

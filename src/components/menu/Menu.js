@@ -34,12 +34,12 @@ class Menu extends Component{
                 </View>
 
                 <View style={ Styles.ItemsContainer }>
-                    <TouchableWithoutFeedback style={ Styles.Items } onPress={() => this.props.navigation.navigate('Expositores', {type: 'http://ieeeuel.org/_functions/api/lndmais-uniescolares'})}>
+                    <TouchableWithoutFeedback style={ Styles.Items } onPress={() => this.props.navigation.navigate('Expositores', {type: 'https://ieeeuel.org/_functions/api/lndmais-uniescolares'})}>
                         <Image source={require('../../../assets/icons/expositores/expositores.png')} style={{width: Dimensions.get('window').width/6, height:  Dimensions.get('window').width/8}} resize='contain'/>
                         <Text style={{ color: '#000', fontSize: Dimensions.get('window').height/60 }}>Expositores</Text>
                         <Text style = {{ fontSize: Dimensions.get('window').height/65 }}>Unidades Escolares</Text>
                     </TouchableWithoutFeedback>
-                    <TouchableWithoutFeedback style={[ Styles.Items, {marginLeft: 20} ]} onPress={() => this.props.navigation.navigate('Expositores', {type: 'http://ieeeuel.org/_functions/api/lndmais-uniparceiras'})}>
+                    <TouchableWithoutFeedback style={[ Styles.Items, {marginLeft: 20} ]} onPress={() => this.props.navigation.navigate('Expositores', {type: 'https://ieeeuel.org/_functions/api/lndmais-uniparceiras'})}>
                         <Image source={require('../../../assets/icons/expositores/expositores.png')} style={{width: Dimensions.get('window').width/6, height:  Dimensions.get('window').width/8}} resize='contain'/>
                         <Text style={{ color: '#000', fontSize: Dimensions.get('window').height/60 }}>Expositores</Text>
                         <Text style = {{ fontSize: Dimensions.get('window').height/65 }}>Parceiros</Text>

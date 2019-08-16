@@ -17,7 +17,7 @@ class Palestrantes extends Component {
 
     componentDidMount() {
         axios
-        .get('http://ieeeuel.org/_functions/api/lndmais-palestrantes')
+        .get('https://ieeeuel.org/_functions/api/lndmais-palestrantes')
         .then(response => {
             const { listaPalestrantes } = response.data
             this.setState({

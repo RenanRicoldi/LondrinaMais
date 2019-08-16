@@ -29,7 +29,7 @@ class Cronograma extends Component {
 	}
 
 	componentDidMount() {
-        axios.get('http://ieeeuel.org/_functions/api/lndmais-cronograma')
+        axios.get('https://ieeeuel.org/_functions/api/lndmais-cronograma')
         .then(response => {
             const { listaCronograma } = response.data
             this.setState({

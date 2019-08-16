@@ -15,6 +15,7 @@ import Expositores from '../expositoresEscolares/Expositores'
 import Alimentacao from '../alimentacao/Alimentacao'
 import DetalhesRestaurantes from '../../components/restaurantDetails/DetalhesRestaurante'
 import ExpDetails from '../../components/expositoresDetails/DetalhesExpositores'
+import Mapa from '../../pages/mapa/Mapa'
 import { AndroidBackHandler } from 'react-navigation-backhandler'
 
 class Main extends Component {
@@ -171,6 +172,12 @@ const MainNavigator = createStackNavigator({
     },
     DetalhesExpositores: {
         screen: ExpDetails,
+        navigationOptions: () => ({
+            header: null
+        })
+    },
+    Mapa: {
+        screen: Mapa,
         navigationOptions: () => ({
             header: null
         })

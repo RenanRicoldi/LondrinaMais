@@ -46,10 +46,10 @@ class Menu extends Component{
                     </TouchableWithoutFeedback>
                 </View>
                 <View style={ Styles.ItemsContainer }>
-                    <View style={ Styles.Items }>
+                    <TouchableWithoutFeedback style={ Styles.Items } onPress={() => this.props.navigation.navigate('Mapa')}>
                         <Image source={require('../../../assets/icons/mapa/mapa.png')} style={{width: Dimensions.get('window').width/6, height:  Dimensions.get('window').width/8}} resize='contain'/>
                         <Text style={ Styles.TextItems }>Mapa</Text>
-                    </View>
+                    </TouchableWithoutFeedback>
                     <TouchableWithoutFeedback style={ [Styles.Items, {marginLeft: 20}] } onPress={() => this.props.navigation.navigate('Alimentacao')}>
                         <Image source={require('../../../assets/icons/alimentacao/alimentacao.png')} style={{width: Dimensions.get('window').width/6, height:  Dimensions.get('window').width/8}} resize='contain'/>
                         <Text style={ Styles.TextItems }>Alimentação</Text>

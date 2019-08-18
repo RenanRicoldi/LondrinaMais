@@ -6,12 +6,13 @@ import {View,
 import axios from 'axios'
 import Styles from './Styles'
 
-class Rating extends Component {
+class Feedback extends Component {
 
     constructor(props){
         super(props)
 
         this.state = {
+            atividade: this.props.titulo,
             feedback: '', 
             opiniao: ''
         };
@@ -19,17 +20,21 @@ class Rating extends Component {
 
     sendFeedback(){
 
-        axios.post('http://ieeeuel.org/_functions/myFunction/', {
+       axios.post('http://ieeeuel.org/_functions/myFunction/', {
+            title: this.state.atividade,
             feedback: this.state.feedback,
             opiniao: this.state.opiniao
-          })
-          .then(function (response) {
+        })
+        .then(function (response) {
             console.log(response)
-            this.setState({opiniao:''})
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        })
+        .catch(function (error) {
+            console.log(error)
+        });
+
+        return (
+                this.props.disableModal("feedbackSentMessage")
+        )
 
     }
 
@@ -39,13 +44,13 @@ class Rating extends Component {
         return(
 
             <View style={Styles.container}>
-                <View style={Styles.titulo}>
-                    <Text>Feedback</Text>
+                <View style={Styles.tituloWrapper}>
+                    <Text style={Styles.tituloText}>Feedback</Text>
                 </View>
 
                 <View style={Styles.rateWrapper}>
                     <Text style={{fontStyle:'italic'}}>O que você achou da atividade</Text>
-                    <Text>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum</Text>
+                    <Text style={Styles.atividadeText}>{this.state.atividade.length < 100 ? this.state.atividade : `${this.state.atividade.substring(0,100)}...`}</Text>
 
                     <View style={Styles.btnWrapper}>
                     <View style={{alignItems: 'center'}}>
@@ -64,7 +69,7 @@ class Rating extends Component {
                 </View>
 
                 <View style={Styles.opinionWrapper}>
-                    <Text>Escreva o motivo de sua opinião</Text>
+                    <Text>Escreva o motivo da sua opinião!</Text>
                     <TextInput
                         style={Styles.textInput}
                         onChangeText={(opiniao) => this.setState({opiniao})}
@@ -75,11 +80,19 @@ class Rating extends Component {
                     />
                 </View>
 
+                {(this.state.feedback == '')?
                 <TouchableOpacity 
-                    style={Styles.titulo}
-                    onPress={() => this.sendFeedback()}>
-                    <Text>Enviar feedback</Text>
-                </TouchableOpacity>
+                    style={Styles.sendButtonDisabled}
+                    activeOpacity={.9}>
+                    <Text style={Styles.sendButtonText}>Enviar feedback</Text>
+                </TouchableOpacity>:
+                <TouchableOpacity 
+                    style={Styles.sendButtonEnabled}
+                    onPress={() => this.sendFeedback()}
+                    activeOpacity={.9}>
+                    <Text style={Styles.sendButtonText}>Enviar feedback</Text>
+                </TouchableOpacity>}
+                
             </View>
 
         )
@@ -88,4 +101,4 @@ class Rating extends Component {
 
 }
 
-export default Rating
+export default Feedback

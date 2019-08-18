@@ -46,6 +46,15 @@ const Styles = StyleSheet.create({
     cardTema: {
         fontSize: 22,
         fontWeight: '800'
+    },
+
+    feedbackSentModalWrapper: {
+        backgroundColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 8,
+        width: 200,
+        height: 40
     }
 
 })

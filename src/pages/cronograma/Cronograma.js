@@ -7,7 +7,9 @@ import {View,
 		Dimensions,
 		Alert} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import Modal from "react-native-modal";
 import axios from 'axios'
+import Feedback from '../../components/feedbackModal/Feedback'
 import Styles from './Styles'
 
 class Cronograma extends Component {
@@ -19,7 +21,11 @@ class Cronograma extends Component {
 			day: "dia22",
 			tipo: "palestra",
 			cronograma: [],
-            loading: true
+			loading: true,
+			isFeedbackVisible: false,
+			isFeedbackSentMessageVisible: false,
+			isFeedbackMessageNotSentVisible: false,
+			nomeAtividade: ''
 		}
 
 	}
@@ -43,18 +49,48 @@ class Cronograma extends Component {
         })
 	}
 
+	toggleModal = (tipo) => {
+
+		if (tipo === "feedback"){
+			this.setState({ isFeedbackVisible: !this.state.isFeedbackVisible })
+		}
+		else if (tipo === "feedbackSentMessage"){
+			this.setState({ isFeedbackVisible: !this.state.isFeedbackVisible })
+			setTimeout( () =>
+				this.setState({ isFeedbackSentMessageVisible: !this.state.isFeedbackSentMessageVisible }),
+			1000)
+
+			setTimeout( () =>
+			this.setState({ isFeedbackSentMessageVisible: !this.state.isFeedbackSentMessageVisible }),
+			4300)
+		}else if (tipo === "feedbackMessageNotSent"){
+			this.setState({ isFeedbackVisible: !this.state.isFeedbackVisible })
+			setTimeout( () =>
+				this.setState({ isFeedbackMessageNotSentVisible: !this.state.isFeedbackMessageNotSentVisible }),
+			1000)
+
+			setTimeout( () =>
+			this.setState({ isFeedbackMessageNotSentVisible: !this.state.isFeedbackMessageNotSentVisible }),
+			4300)
+		}
+
+	  };
+
 	nomeTema(info){
-        if(info.tema.length >= 60)
-            return(
-                Alert.alert(
-                    'Tema',
-                    info.tema,
-                    [
-                        {text: 'Voltar'}
-                    ],
-                    {cancelable: true}
-                )
+
+		this.setState({ nomeAtividade: info.tema})
+
+		return(
+			Alert.alert(
+				'Tema',
+				info.tema,
+				[
+					{text: 'Voltar'},
+					{text: 'Enviar feedback', onPress: () => this.toggleModal("feedback")}
+				],
+				{cancelable: true}
 			)
+		)
 	}
 
 	drawCard(info){
@@ -83,7 +119,8 @@ class Cronograma extends Component {
 	render(){
 		if(this.state.loading === true){
 			return (
-				<View style={Styles.container}>					
+				<View style={Styles.container}>		
+					
 					<View flexDirection='row' flex={1} alignItems='center' justifyContent='space-around' marginBottom={5}>						
 						<View>
 						<TouchableOpacity activeOpacity={0.9} onPress={() => this.setState({tipo:"palestra"})}>
@@ -110,20 +147,49 @@ class Cronograma extends Component {
 						</TouchableOpacity>
 						</View>	
 					</View>
+					
 					<View flex={3}>
-							<View style={Styles.pickerStl}>
-							<Picker selectedValue = {this.state.day} onValueChange = {this.updateDay}>
-								<Picker.Item label = "22 de agosto" value="dia22" />
-								<Picker.Item label = "23 de agosto" value="dia23" />
-								<Picker.Item label = "24 de agosto" value="dia24" />
-							</Picker>
-						</View>	
+
+						<View style={Styles.pickerStl}>
+						<Picker selectedValue = {this.state.day} onValueChange = {this.updateDay}>
+							<Picker.Item label = "22 de agosto" value="dia22" />
+							<Picker.Item label = "23 de agosto" value="dia23" />
+							<Picker.Item label = "24 de agosto" value="dia24" />
+						</Picker>
+						</View>
+
+					
 						<ScrollView>
 							{this.state.cronograma.map((info) => {
 								return this.drawCard(info)
 							})}
 						</ScrollView>	
+
 					</View>	
+					
+					<Modal isVisible={this.state.isFeedbackVisible}
+						onBackButtonPress={() => this.toggleModal("feedback")}
+					>
+						<Feedback titulo={this.state.nomeAtividade} disableModal={this.toggleModal}/>
+					</Modal>
+
+					<Modal isVisible={this.state.isFeedbackSentMessageVisible}
+						animationIn='fadeIn' animationOut='fadeOut'
+						style={{alignItems:'center'}}>
+						<View style={Styles.feedbackSentModalWrapper}>
+							<Text style={{ fontSize: 16, fontWeight: 'bold'}}>Feedback enviado!</Text>
+						</View>
+					</Modal>
+
+					<Modal isVisible={this.state.isFeedbackMessageNotSentVisible}
+						animationIn='fadeIn' animationOut='fadeOut'
+						style={{alignItems:'center'}}>
+						<View style={Styles.feedbackSentModalWrapper}>
+							<Text style={{ fontSize: 16, fontWeight: 'bold'}}>Não foi possivel enviar</Text>
+							<Text style={{ fontSize: 14}}>Verifique sua internet e tente novamente</Text>
+						</View>
+					</Modal>
+
 				</View>
 			)
         } else {

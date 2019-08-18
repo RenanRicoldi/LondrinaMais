@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {View,
         Text,
         TouchableOpacity,
-        TextInput} from 'react-native'
+        TextInput,
+        Image} from 'react-native'
 import axios from 'axios'
 import Styles from './Styles'
 
@@ -14,7 +15,9 @@ class Feedback extends Component {
         this.state = {
             atividade: this.props.titulo,
             feedback: '', 
-            opiniao: ''
+            opiniao: '',
+            likeButtonEnabled: false,
+            dislikeButtonEnabled: false
         };
     }
 
@@ -25,16 +28,14 @@ class Feedback extends Component {
             feedback: this.state.feedback,
             opiniao: this.state.opiniao
         })
-        .then(function (response) {
+        .then(response => {
             console.log(response)
+            this.props.disableModal("feedbackSentMessage")
         })
-        .catch(function (error) {
+        .catch(error => {
             console.log(error)
+            this.props.disableModal("feedbackMessageNotSent")
         });
-
-        return (
-                this.props.disableModal("feedbackSentMessage")
-        )
 
     }
 
@@ -54,15 +55,30 @@ class Feedback extends Component {
 
                     <View style={Styles.btnWrapper}>
                     <View style={{alignItems: 'center'}}>
-                        <TouchableOpacity 
-                            style={Styles.btnStyle}
-                            onPress={() => this.setState({feedback: 'Não gostei'})} />
+                        {(this.state.dislikeButtonEnabled)?
+                         <TouchableOpacity style={Styles.btnStyle}
+                         onPress={() => this.setState({feedback: 'Não gostei', likeButtonEnabled: false, dislikeButtonEnabled: true})}>
+                             <Image source={require('../../../assets/icons/feedback/thumbsDownEnabled.png')} style={Styles.btnDislikeStyle}/>
+                         </TouchableOpacity>:
+                        <TouchableOpacity style={Styles.btnStyle}
+                        onPress={() => this.setState({feedback: 'Não gostei', likeButtonEnabled: false, dislikeButtonEnabled: true})}>
+                            <Image source={require('../../../assets/icons/feedback/thumbsDownDisabled.png')} style={Styles.btnDislikeStyle}/>
+                        </TouchableOpacity>}
                         <Text>Não gostei</Text>
                     </View>
 
                     <View style={{alignItems: 'center'}}>
+                        {(this.state.likeButtonEnabled)?
+                         <TouchableOpacity style={Styles.btnStyle}
+                         onPress={() => this.setState({feedback: 'Gostei', likeButtonEnabled: true, dislikeButtonEnabled: false})}>
+                             <Image source={require('../../../assets/icons/feedback/thumbsUpEnabled.png')} style={Styles.btnLikeStyle}/>
+                         </TouchableOpacity>:
                         <TouchableOpacity style={Styles.btnStyle}
-                        onPress={() => this.setState({feedback: 'Gostei'})} />
+                        onPress={() => this.setState({feedback: 'Gostei', likeButtonEnabled: true, dislikeButtonEnabled: false})}>
+                            <Image source={require('../../../assets/icons/feedback/thumbsUpDisabled.png')} style={Styles.btnLikeStyle}/>
+                        </TouchableOpacity>}
+
+                        
                         <Text>Gostei</Text>
                     </View>
                     </View>

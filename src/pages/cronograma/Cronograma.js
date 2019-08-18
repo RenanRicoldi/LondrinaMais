@@ -58,7 +58,7 @@ class Cronograma extends Component {
 			this.setState({ isFeedbackVisible: !this.state.isFeedbackVisible })
 			setTimeout( () =>
 				this.setState({ isFeedbackSentMessageVisible: !this.state.isFeedbackSentMessageVisible }),
-			1000)
+			800)
 
 			setTimeout( () =>
 			this.setState({ isFeedbackSentMessageVisible: !this.state.isFeedbackSentMessageVisible }),
@@ -67,11 +67,11 @@ class Cronograma extends Component {
 			this.setState({ isFeedbackVisible: !this.state.isFeedbackVisible })
 			setTimeout( () =>
 				this.setState({ isFeedbackMessageNotSentVisible: !this.state.isFeedbackMessageNotSentVisible }),
-			1000)
+			800)
 
 			setTimeout( () =>
 			this.setState({ isFeedbackMessageNotSentVisible: !this.state.isFeedbackMessageNotSentVisible }),
-			4300)
+			6300)
 		}
 
 	  };

@@ -33,10 +33,35 @@ const Styles = StyleSheet.create({
         marginTop: 15
     },
     btnStyle:{
-        width: 50,
-        height: 50,
-        backgroundColor: 'red',
-        borderRadius: 100
+        width: 60,
+        height: 60,
+        backgroundColor: 'white',
+        borderRadius: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 2,
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+
+        elevation: 3,
+    },
+    btnDislikeStyle: {
+        width: 32,
+        height: 32,
+        marginTop: 4,
+        marginRight: 2
+    },
+    btnLikeStyle: {
+        width: 32,
+        height: 32,
+        marginBottom: 4,
+        marginLeft: 1
     },
 
     opinionWrapper: {

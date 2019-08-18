@@ -169,12 +169,14 @@ class Cronograma extends Component {
 					
 					<Modal isVisible={this.state.isFeedbackVisible}
 						onBackButtonPress={() => this.toggleModal("feedback")}
+						backdropTransitionOutTiming={0}
 					>
 						<Feedback titulo={this.state.nomeAtividade} disableModal={this.toggleModal}/>
 					</Modal>
 
 					<Modal isVisible={this.state.isFeedbackSentMessageVisible}
 						animationIn='fadeIn' animationOut='fadeOut'
+						backdropTransitionOutTiming={0}
 						style={{alignItems:'center'}}>
 						<View style={Styles.feedbackSentModalWrapper}>
 							<Text style={{ fontSize: 16, fontWeight: 'bold'}}>Feedback enviado!</Text>
@@ -183,6 +185,7 @@ class Cronograma extends Component {
 
 					<Modal isVisible={this.state.isFeedbackMessageNotSentVisible}
 						animationIn='fadeIn' animationOut='fadeOut'
+						backdropTransitionOutTiming={0}
 						style={{alignItems:'center'}}>
 						<View style={Styles.feedbackSentModalWrapper}>
 							<Text style={{ fontSize: 16, fontWeight: 'bold'}}>Não foi possivel enviar</Text>

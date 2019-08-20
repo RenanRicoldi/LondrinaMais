@@ -2,31 +2,14 @@ import {StyleSheet,
         Dimensions} from 'react-native'
 
 const Styles = StyleSheet.create({
-
-    container: {
-        flex: 1,
-        backgroundColor: '#97DB4F',
-    },
-
     mapView: {
-        flex: 5,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
     },
-    emBreve:{
-        fontWeight: 'bold',
-        fontStyle: 'italic',
-        fontSize: Dimensions.get('window').width / 30,
-        opacity: 0.5
-    },
-    descricao: {
-        fontWeight: 'bold',
-        fontSize: Dimensions.get('window').width / 20
-    },
-
     bottomButton: {
         height: Dimensions.get('window').height / 11,
-        backgroundColor: '#66C500',
+        backgroundColor: '#97DB4F',
         justifyContent: 'center',
         paddingLeft: 5,
         paddingRight: 5
@@ -47,8 +30,26 @@ const Styles = StyleSheet.create({
         height: Dimensions.get('window').width / 16,
         width: Dimensions.get('window').width / 16,
         marginRight: 5
-    }
-
+    },
+    container: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: '#97DB4F',
+    overflow: 'hidden',
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
+  },
+  wrapper: {
+    flex: 1,
+  },
+  box: {
+    width: 150,
+    height: 150,
+    alignSelf: 'center',
+    backgroundColor: 'plum',
+    margin: 10,
+    zIndex: 200,
+  }
 })
 
 export default Styles

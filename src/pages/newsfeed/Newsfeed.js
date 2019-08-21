@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import {View,
         ScrollView,
-        StyleSheet,
         Text,
         Image,
         TouchableNativeFeedback} from 'react-native'
 import axios from 'axios'
 import { imageURL } from '../../utils/ImageURL'
+import { resumoNoticia } from '../../utils/NewsDescription'
 import Styles from './Styles'
 
 class Newsfeed extends Component {
@@ -59,10 +59,8 @@ class Newsfeed extends Component {
                             noticia.title:
                             `${noticia.noticia.substring(0,65)}...`}
                         </Text>
-                        <Text style={Styles.newsCardDesc} numberOfLines={2}>
-                            {noticia.noticia.length < 100?
-                            noticia.noticia:
-                            `${noticia.noticia.substring(0,100)}...`}
+                        <Text style={Styles.newsCardDesc} >
+                            {resumoNoticia(noticia.noticia)}
                         </Text>
                     </View> 
             </View>

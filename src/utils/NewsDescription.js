@@ -1,0 +1,51 @@
+export function resumoNoticia(noticia){
+
+    let noticiaResumida = noticia.length < 100?
+                            noticia:
+                            `${noticia.substring(0,100)}...`
+
+    return noticiaResumida.replace(/<p>/g, "")
+                          .replace("</p>", "")
+                          .replace(/<em>/g, "")
+                          .replace("</em>", "")
+                          .replace("</s>", "")
+                          .replace("</s>", "")
+                          .replace(/<strong>/g, "")
+                          .replace("</strong>", "")
+                          .replace(/<b>/g, "")
+                          .replace("</b>", "")
+                          .replace(/<i>/g, "")
+                          .replace("</i>", "")
+                          .replace(/<u>/g, "")
+                          .replace("</u>", "")
+                          .replace(/<br>/g, "")
+                          .replace("</br>", "")
+                          .replace("&nbsp;", "")
+                          .replace(/&aacute;/g, "á")
+                          .replace(/&Aacute;/g, "Á")
+                          .replace(/&Acirc;/g, "Â")
+                          .replace(/&acirc;/g, "â")
+                          .replace(/&Agrave;/g, "À")
+                          .replace(/&Atilde;/g, "Ã")
+                          .replace(/&atilde;/g, "ã")
+                          .replace(/&Eacute;/g, "É")
+                          .replace(/&eacute;/g, "é")
+                          .replace(/&Ecirc;/g, "Ê")
+                          .replace(/&ecirc;/g, "ê")
+                          .replace(/&Iacute;/g, "Í")
+                          .replace(/&iacute;/g, "í")
+                          .replace(/&Icirc;/g, "Î")
+                          .replace(/&icirc;/g, "î")
+                          .replace(/&Oacute;/g, "Ó")
+                          .replace(/&oacute;/g, "ó")
+                          .replace(/&Ocirc;/g, "Ô")
+                          .replace(/&ocirc;/g, "ô")
+                          .replace(/&Uacute;/g, "Ú")
+                          .replace(/&uacute;/g, "ú")
+                          .replace(/&Ucirc;/g, "Û")
+                          .replace(/&ucirc;/g, "û")
+                          .replace(/&Ccedil;/g, "Ç")
+                          .replace(/&ccedil;/g, "ç")
+
+
+}

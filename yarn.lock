@@ -5420,6 +5420,32 @@ react-native-communications@^2.2.1:
   resolved "https://registry.yarnpkg.com/react-native-communications/-/react-native-communications-2.2.1.tgz#7883b56b20a002eeb790c113f8616ea8692ca795"
   integrity sha1-eIO1ayCgAu63kMET+GFuqGksp5U=
 
+react-native-easy-guesture-responder@^1.1.2, react-native-easy-guesture-responder@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/react-native-easy-guesture-responder/-/react-native-easy-guesture-responder-1.1.3.tgz#0a9c0e8eb68b9b43b4f86e4689786ba7525cc1b9"
+  integrity sha512-/1yHMRcslMWQJc1iRNCSjJ32npPrY3Atme0lzKxmhYJg67E7Douowq2FalGEegdid8yeZVnPKk+BkyIGyx2dCw==
+  dependencies:
+    prop-types "^15.6.2"
+
+react-native-easy-view-transformer@^1.1.1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-easy-view-transformer/-/react-native-easy-view-transformer-1.1.2.tgz#0e106070d9e67244665e7b6ee960abe98820e1bc"
+  integrity sha512-f4ycl+MDA5zXj1KMNo+a/eh+lZxFsMcquG2zEZEk38G4is8SmfRgdrJkwZAHpB8QNu/8nCHFsnCR5np620eTvQ==
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-easy-guesture-responder "^1.1.2"
+    react-native-scrolling "^1.0.2"
+
+react-native-gallery-swiper@^1.22.2:
+  version "1.22.2"
+  resolved "https://registry.yarnpkg.com/react-native-gallery-swiper/-/react-native-gallery-swiper-1.22.2.tgz#f41f34d3c0f57fdec74697e9589abb002368b984"
+  integrity sha512-OtfkyN7SXKA6lfpDNPwUipy14X3ooEo9FwHxK4ap48YovDABnv9Th8vX/MpjFLoVhx9uE7jUKjer1nH34yVqag==
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-easy-guesture-responder "^1.1.3"
+    react-native-image-transformer "^1.0.7"
+    react-native-page-list "^1.0.4"
+
 react-native-gesture-handler@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.3.0.tgz#d0386f565928ccc1849537f03f2e37fd5f6ad43f"
@@ -5428,6 +5454,14 @@ react-native-gesture-handler@^1.3.0:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.2"
     prop-types "^15.5.10"
+
+react-native-image-transformer@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-native-image-transformer/-/react-native-image-transformer-1.0.7.tgz#55fe76aef4ec92073bfafbff221b7e27f5e75eaa"
+  integrity sha512-gO+ZVHEhRuXY6GOpIEVMIY+rKlQNVjpwBHZGjJU/BHmQaY0/Ial/HtFT0VbEU4oEO9TYMW0c/JuvYi48w+HEgQ==
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-easy-view-transformer "^1.1.1"
 
 react-native-iphone-x-helper@^1.2.1:
   version "1.2.1"
@@ -5453,6 +5487,15 @@ react-native-navigation@^2.26.2:
     react-lifecycles-compat "2.0.0"
     tslib "1.9.3"
 
+react-native-page-list@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-page-list/-/react-native-page-list-1.0.4.tgz#847d3f39e03454470f235b0c79ee83e3ba99141d"
+  integrity sha512-cpe2srVBPfDs9ROSLJC/A5PPUm31LpkOWmOaGyUvTEUBS6HtgEIUuloPKdtFaws0njx+XZzCoBnyDHIk0v2d4g==
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-easy-guesture-responder "^1.1.2"
+    react-native-scrolling "^1.0.2"
+
 react-native-render-html@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/react-native-render-html/-/react-native-render-html-4.1.2.tgz#dfd06ac7e87ed68b6421750e88dd7895d284935b"
@@ -5476,6 +5519,13 @@ react-native-safe-area-view@^0.14.1:
   integrity sha512-tOxHGQUN83MTmQB4ghoQkibqOdGiX4JQEmeyEv96MKWO/x8T2PJv84ECUos9hD3blPRQwVwSpAid1PPPhrVEaw==
   dependencies:
     debounce "^1.2.0"
+
+react-native-scrolling@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-scrolling/-/react-native-scrolling-1.0.3.tgz#ad3e964070d6a8c713f1bd703171ab26d83ab5d5"
+  integrity sha512-V8ORRnRA4sdOREJlDHxnPfM/7IK6rj/HZejgTaym1ACjKr9a3Pej4ZDOQA9qnBgNac8kMVhDup40HgJxYG//EA==
+  dependencies:
+    prop-types "^15.6.2"
 
 react-native-tab-view@^1.2.0, react-native-tab-view@^1.4.1:
   version "1.4.1"

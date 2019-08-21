@@ -1,5 +1,4 @@
-import {StyleSheet,
-        Dimensions} from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 
 const Styles = StyleSheet.create({
     mapView: {
@@ -14,6 +13,18 @@ const Styles = StyleSheet.create({
         paddingLeft: 5,
         paddingRight: 5
     },
+    Lista: {
+        height: Dimensions.get('window').height / 13,
+        backgroundColor: '#97DB4F',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingLeft: 5,
+        paddingRight: 5,
+        marginTop: 5,
+        marginBottom: 5,
+        borderRadius: 10,
+        flex: 1
+    },
     howToGetButton: {
         backgroundColor: 'white',
         height: Dimensions.get('window').height / 13,
@@ -21,6 +32,18 @@ const Styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row'
+    },
+    closeList: {
+        backgroundColor: '#d9d9d9',
+        height: Dimensions.get('window').height / 16,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingLeft: 5,
+        paddingRight: 5,
+        marginTop: 5,
+        marginBottom: 5,
+        borderRadius: 10,
+        flex: 1
     },
     bottomButtonText: {
         fontWeight: 'bold',
@@ -32,12 +55,12 @@ const Styles = StyleSheet.create({
         marginRight: 5
     },
     container: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: '#97DB4F',
-    overflow: 'hidden',
-    alignItems: 'center',
-    flex: 1,
-    justifyContent: 'center',
+        padding: 5,
+        backgroundColor: 'white',
+        borderRadius: 8,
+        width: Dimensions.get('window').width/1.4,
+        height: Dimensions.get('window').height/1.6,
+        
   },
   wrapper: {
     flex: 1,

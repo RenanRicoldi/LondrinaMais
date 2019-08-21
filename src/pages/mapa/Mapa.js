@@ -132,18 +132,18 @@ class Mapa extends Component {
                     ]}
                 />
                 <View style={Styles.bottomButton}>
-                    <TouchableOpacity activeOpacity={.9} onPress={() => this.setModalVisibleInternacional(true)}>
-                        <View style={Styles.howToGetButton}>
-                            <Image style={Styles.directionIcon} source={require('../../../assets/icons/infoListas/info.png')}></Image>
-                            <Text style={Styles.bottomButtonText}>Stands do Pavilhão Internacional</Text>
-                        </View>
-                    </TouchableOpacity>
-                </View>
-                <View style={Styles.bottomButton}>
                     <TouchableOpacity activeOpacity={.9} onPress={() => this.setModalVisibleNacional(true)}>
                         <View style={Styles.howToGetButton}>
                             <Image style={Styles.directionIcon} source={require('../../../assets/icons/infoListas/info.png')}></Image>
                             <Text style={Styles.bottomButtonText}>Stands do Pavilhão Nacional</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={Styles.bottomButton}>
+                    <TouchableOpacity activeOpacity={.9} onPress={() => this.setModalVisibleInternacional(true)}>
+                        <View style={Styles.howToGetButton}>
+                            <Image style={Styles.directionIcon} source={require('../../../assets/icons/infoListas/info.png')}></Image>
+                            <Text style={Styles.bottomButtonText}>Stands do Pavilhão Internacional</Text>
                         </View>
                     </TouchableOpacity>
                 </View>

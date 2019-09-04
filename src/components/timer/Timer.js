@@ -7,29 +7,14 @@ import Styles from './Styles'
 const IsItOver = () => {
     const now = hours() + days()
 
-    if(now > 0){
         return(
             <>
                 <View style={{alignItems: 'center'}}>
-                    <Text style={{fontSize: 50, color: 'white'}}>{days()}</Text>
-                    <Text style={{fontSize: 15, color: 'white'}}>dias</Text>
-                </View>
-                <View style={{alignItems: 'center'}}>
-                    <Text style={{fontSize: 40, color: 'white'}}>{hours()}</Text>
-                    <Text style={{fontSize: 15, color: 'white'}}>horas</Text>
+                    <Text style={{fontSize: Dimensions.get('window').width/14, color: 'white'}}>Até o próximo</Text>
+                    <Text style={{fontSize: Dimensions.get('window').width/14, color: 'white'}}>ano!</Text>
                 </View>
             </>
         )
-    } else{
-        return(
-            <>
-                <View style={{alignItems: 'center'}}>
-                    <Text style={{fontSize: Dimensions.get('window').width/11, color: 'white'}}>Começou!</Text>
-                </View>
-            </>
-        )
-    }
-    
 }
 
 function Timer({ transY }) {

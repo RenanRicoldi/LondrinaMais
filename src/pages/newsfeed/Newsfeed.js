@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import {View,
-        ScrollView,
+        FlatList,
         Text,
         Image,
-        TouchableNativeFeedback} from 'react-native'
+        TouchableNativeFeedback,
+        ActivityIndicator} from 'react-native'
 import axios from 'axios'
 import { imageURL } from '../../utils/ImageURL'
 import { resumoNoticia } from '../../utils/NewsDescription'
@@ -16,23 +17,26 @@ class Newsfeed extends Component {
 
         this.state = {
             news: [],
-            loading: true
+            loading: true,
+            done: true
         }
     }
 
     componentDidMount() {
+        this.setState({loading: true})
         axios
         .get('https://ieeeuel.org/_functions/api/lndmais-newsfeed')
         .then(response => {
             const { newsFeed } = response.data
             this.setState({
                 news: newsFeed,
-                loading: true
+                loading: false,
+                done: true
             })
         })
         .catch(error => {
             console.log(error)
-            this.setState({loading: false})
+            this.setState({loading: false, done: false})
         })
     }
 
@@ -69,30 +73,30 @@ class Newsfeed extends Component {
     }
     
     render() {
-        if(this.state.loading === true){
+        if( !this.state.loading && this.state.done ){
             return(
                 <View style={Styles.container}>
-                    <ScrollView>
-                    { this.state.news.map((noticia) => {
-                            return (noticia.foto)?
-                                this.drawCard(noticia):
-                                this.drawCardNoPicture(noticia)
-                        })}
-                    </ScrollView>
+                    <FlatList styles = { Styles.wrapper } data={ this.state.news } renderItem={({ item }) => (
+                        item.foto ? this.drawCard(item) : this.drawCardNoPicture(item) 
+                    )}
+                    keyExtractor = {item => item._id} />
                 </View>
             )
-        } else {
+        } else if ( !this.state.loading && !this.state.done ) {
             return(
                 <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#97DB4F', flex: 1 }}>
                     <Text style={ { fontSize: 15 }}>Não foi possível baixar os dados</Text>
                     <Text style={{ fontSize: 20 }}>Cheque sua internet</Text>  
                 </View>
             )
+        } else if ( this.state.loading ){
+            return(
+                <View style={[Styles.container, {alignItems: 'center', justifyContent: 'center'}]}>
+                    <ActivityIndicator size='large' color='#d9d9d9' />
+                </View>
+            )
         }
-
     }
-
-
 }
 
 export default Newsfeed;
